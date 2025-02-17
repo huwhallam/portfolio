@@ -5,12 +5,18 @@ Micromaster program in Statistics and Data Science - current
 PhD, Humanities research, King's College London
 
 ### Work Experience
-Senior Data and Insights Analyst, the University of Oxford (2017-2025)
-- big impact project 1!
-- big impact project 2!
+<b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
+Analytics and reporting lead for mass fundraising and alumni engagement team. Defined and segmented audiences for 80+ campaigns, soliciting 8k gifts and generating £2.2M in philanthropic revenue. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
+<i>Key achievements:</i>
+●	Transformed reporting provision within the department, defining the strategic approach for analytics and introducing repeatable workflows (python, Alteryx) and automated reporting (Tableau, Power BI). Defined and articulated crucial performance metrics and ensured reporting was available, up-to-date, consistent and secure. My reports have been accessed thousands of times and by hundreds of users.
+●	Defined and instituted engagement metrics and developed machine learning algorithms to improve audience segmentation and personalization, and guide the marketing strategy.
+●	Devised and led a reporting project involving a customisation of the database and classification of 1500 funds for a new multi-billion pound campaign. Proactively secured input and alignment from team heads, senior leadership and technical SME’s, and created a user-friendly solution that brought flexibility to reporting.
+●	Designed an analytics tool to aid business leads when negotiating transaction fees, resulting in 30% cost reductions.
+●	Led the audit, classification and migration of 600k+ consent records for GDPR. Developed risk evaluation analytics for senior leadership and legal team, and toolkits to support users across other teams in prioritising consent collection activities. Awarded staff excellence prize for contribution to compliance, relationship building and transparency.
+
 
 ### Projects
-
+<i>Work in progress</i>
 
 # dsa
 Data Structures and Algorithms training
