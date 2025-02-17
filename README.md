@@ -24,4 +24,6 @@ Micromaster program in Statistics and Data Science - current
 
 ### Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
- <a href="https://www.w3schools.com">Dynamic Arrays</a> 
+<ol>
+ <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Dynamic%20Arrays.ipynb">Dynamic Arrays</a> </li>
+</ol>
