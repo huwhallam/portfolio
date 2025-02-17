@@ -1,4 +1,4 @@
-# Data Scientist
+# Senior Data Scientist - Insights Manager - BI and Analytics Lead
 I am a data scientist with seven years of experience crafting impactful, data-driven business solutions. 
 <br>What sets me apart? I am a curiosity-led, creative, interdisplinary thinker, with a talent for active listening and working across diverse perspectives to drive innovation that truly meets my clients' needs.
 <br>I am passionate about empowering others and using data to promote understanding and create a better, fairer world. And while I thrive on intellectual challenge, I also value being inclusive, collaborative and authentic, and - not least - having fun while I do it!
@@ -20,5 +20,7 @@ Micromaster program in Statistics and Data Science - current
 
 
 ### Projects
-<i>Work in progress</i>
-Data Structures and Algorithms training
+<i>This section is still under construction</i>
+
+### Data Structures and Algorithms
+I'm currently upskilling on DSA. I'll be sharing my notes here.
