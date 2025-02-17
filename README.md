@@ -1,4 +1,9 @@
 # Data Scientist
+I am a data scientist with seven years of experience crafting impactful, data-driven business solutions. 
+What sets me apart? I am a curiosity-led, creative, interdisplinary thinker, with a talent for active listening and working across diverse perspectives to drive innovation that truly meets my clients' needs.
+I am passionate about empowering others and using data to promote understanding and create a better, fairer world.
+I thrive on intellectual challenge, but also value having fun and being inclusive, collaborative and authentic while I do it!
+
 
 ### Education and training
 Micromaster program in Statistics and Data Science - current
