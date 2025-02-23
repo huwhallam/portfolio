@@ -29,4 +29,5 @@ I'm currently upskilling on DSA. I'll be sharing my notes here.
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Dynamic%20Arrays.ipynb">Dynamic Arrays</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/String%20Manipulation.ipynb">String Manipulation</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Two%20Pointers.ipynb">Two Pointers</a> </li>
+ <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Grids%20and%20Matrices.ipynb">Grids and Matrices</a> </li>
 </ol>
