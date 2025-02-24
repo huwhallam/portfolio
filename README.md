@@ -11,6 +11,7 @@ Micromaster program in Statistics and Data Science - current
 ### Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
 <br>Analytics and reporting lead for mass fundraising and alumni engagement team. Defined and segmented audiences for 80+ campaigns, soliciting 8k gifts and generating £2.2M in philanthropic revenue. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
+<br>
 <br><i>Key achievements:</i>
 <ul>
  <li>Transformed reporting provision within the department, defining the strategic approach for analytics and introducing repeatable workflows (python, Alteryx) and automated reporting (Tableau, Power BI). Defined and articulated crucial performance metrics and ensured reporting was available, up-to-date, consistent and secure. My reports have been accessed thousands of times and by hundreds of users.</li>
@@ -30,4 +31,5 @@ I'm currently upskilling on DSA. I'll be sharing my notes here.
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/String%20Manipulation.ipynb">String Manipulation</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Two%20Pointers.ipynb">Two Pointers</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Grids%20and%20Matrices.ipynb">Grids and Matrices</a> </li>
+ <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Binary%20Search.ipynb">Binary Search</a> </li>
 </ol>
