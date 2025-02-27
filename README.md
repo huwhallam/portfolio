@@ -8,7 +8,7 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 <ul>
  <li>Micromaster program in Statistics and Data Science - current</li>
  <li>PhD, Humanities research, King's College London</li>
- <li>BA(Hons)/BMus(Hons), first class honours, faculty prize for BA(Hons)</li>
+ <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons)</li>
 </ul>
 <br>
  
