@@ -7,6 +7,7 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 ### Education and training
 Micromaster program in Statistics and Data Science - current
 <br>PhD, Humanities research, King's College London
+<br>BA(Hons)/BMus(Hons), first class honours, faculty prize for BA(Hons)
 
 ### Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
