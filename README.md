@@ -10,7 +10,8 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
  <li>PhD, Humanities research, King's College London</li>
  <li>BA(Hons)/BMus(Hons), first class honours, faculty prize for BA(Hons)</li>
 <ul>
-
+<br>
+ 
 ### Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
 <br>Analytics and reporting lead for mass fundraising and alumni engagement team. Defined and segmented audiences for 80+ campaigns, soliciting 8k gifts and generating £2.2M in philanthropic revenue. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
