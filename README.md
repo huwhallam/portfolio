@@ -38,4 +38,5 @@ I'm currently upskilling on DSA. I'll be sharing my notes here.
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Binary%20Search.ipynb">Binary Search</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Sets%20and%20Maps.ipynb">Sets and Maps</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Sorting.ipynb">Sorting</a> </li>
+ <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Stacks%20and%20queues.ipynb">Stacks and Queues</a> </li>
 </ol>
