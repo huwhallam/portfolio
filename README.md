@@ -28,7 +28,7 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 ### Projects
 <i>This section is still under construction</i>
 #### Earnings or environment: an exploration of the relationship between wellbeing, access to nature and earnings across London's boroughs
-<a href="https://github.com/huwhallam/portfolio/blob/main/Environment%20or%20earnings.ipynb">View full Earnings and environment Jupyter notebook</a>
+<a href="https://github.com/huwhallam/portfolio/blob/main/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
 
 
 ### Data Structures and Algorithms
