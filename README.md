@@ -28,6 +28,12 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 ### Projects
 <i>This section is still under construction</i>
 #### Earnings or environment: an exploration of the relationship between wellbeing, access to nature and earnings across London's boroughs
+In this project, I explore and visualise the relationship between wellbeing, greenspace and earnings across different parts of London. I ask:
+
+    Is there a link, for Londoners, between wellbeing and access to nature?
+    Does being a high earner feature in the relationship between these variables?
+
+I draw on two datasets, from the Office of National Statistics (ONS), which record various wellbeing and wealth metrics across each of London's boroughs. I link these with Ordnance Survey data charting the extent of green and blue spaces - the city’s parks, gardens, trees, green spaces, rivers and wetlands, and features such as green roofs.
 <img src="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20Environment.png" alt="Three maps of London highlighting boroughs with, respectively, the highest concentration of green and blue spaces, the median score out of ten given in response to the survey question, 'To what extent do you feel the things you do in your life are worthwhile?', and average weekly earnings.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
 
