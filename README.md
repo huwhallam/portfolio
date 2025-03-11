@@ -2,8 +2,20 @@
 I am a data scientist with seven years of experience crafting impactful, data-driven business solutions. 
 <br>What sets me apart? I am a curiosity-led, creative, interdisplinary thinker, with a talent for active listening and working across diverse perspectives, so that I can drive innovation that truly meets my clients' needs.
 <br>I am passionate about empowering others and using data to promote understanding and create a better, fairer world. And while I thrive on intellectual challenge, I also value being inclusive and collaborative and forming authentic connections. 
+<br>
 
+### Technical skills
 
+Python/Pandas
+Google Cloud Platform
+Machine learning
+Tableau
+PowerBI
+Alteryx
+SQL
+Blackbaud CRM
+
+<br>
 ### Education and training
 <ul>
  <li>Micromaster program in Statistics and Data Science - current</li>
@@ -16,14 +28,7 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
 <br>Analytics and reporting lead for mass fundraising and alumni engagement team. Defined and segmented audiences for 80+ campaigns, soliciting 8k gifts and generating £2.2M in philanthropic revenue. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
 <br>
-<br><i>Key achievements:</i>
-<ul>
- <li>Transformed reporting provision within the department, defining the strategic approach for analytics and introducing repeatable workflows (python, Alteryx) and automated reporting (Tableau, Power BI). Defined and articulated crucial performance metrics and ensured reporting was available, up-to-date, consistent and secure. My reports have been accessed thousands of times and by hundreds of users.</li>
- <li>Defined and instituted engagement metrics and developed machine learning algorithms to improve audience segmentation and personalization, and guide the marketing strategy.</li>
- <li>Devised and led a reporting project involving a customisation of the database and classification of 1500 funds for a new multi-billion pound campaign. Proactively secured input and alignment from team heads, senior leadership and technical SME’s, and created a user-friendly solution that brought flexibility to reporting.</li>
- <li>Designed an analytics tool to aid business leads when negotiating transaction fees, resulting in 30% cost reductions.</li>
- <li>Led the audit, classification and migration of 600k+ consent records for GDPR. Developed risk evaluation analytics for senior leadership and legal team, and toolkits to support users across other teams in prioritising consent collection activities. Awarded staff excellence prize for contribution to compliance, relationship building and transparency.</li>
-</ul>
+
 
 ### Projects
 <i>This section is still under construction</i>
@@ -38,14 +43,14 @@ I draw on two datasets, from the Office of National Statistics (ONS), which reco
 
 <img src="assets/Earnings%20or%20Environment.png" alt="Three maps of London highlighting boroughs with, respectively, the highest concentration of green and blue spaces, the median score out of ten given in response to the survey question, 'To what extent do you feel the things you do in your life are worthwhile?', and average weekly earnings.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
-
+<br>
 #### Record temperatures: how London's weather is becoming more volatile
 ##### <i>Data visualisation using Matplotlib</i>
 This data visualisation explores how London's weather is changing. I show the many instances in 2024 when daily minima and maxima air temperature exceeded the lowest and highest temperatures for that day recorded in the preceding decade. 
 
 <img src="assets/London%20record%20air%20temperatures.png" alt="A chart showing the minima and maxima air temperature in London for each calendar day as recorded across 2014-2023, as well as the 84 maxima and minima recorded in 2024 that exceed those previously recorded.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/London%20record%20temperatures.ipynb">View full London record temperatures Jupyter notebook</a>
-
+<br>
 ### Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
 <ol>
