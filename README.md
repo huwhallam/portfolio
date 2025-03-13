@@ -22,6 +22,22 @@ Blackbaud CRM
  <li>PhD, Humanities research, King's College London</li>
  <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons)</li>
 </ul>
+
+Mathematics for Machine Learning
+Imperial College London, 2024
+
+Data Science with Python
+University of Michigan, 2024
+
+Professional Data Engineer
+Google Cloud, 2023
+
+ODSC Machine Learning Certification
+AI+ Training, 2022
+
+Machine Learning 
+Stanford University (Coursera), 2019
+
 <br>
  
 ### Work Experience
