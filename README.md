@@ -16,6 +16,7 @@ SQL
 Blackbaud CRM
 
 <br>
+
 ### Education and training
 <ul>
  <li>Micromaster program in Statistics and Data Science - current</li>
