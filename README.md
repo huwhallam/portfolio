@@ -2,6 +2,7 @@
 I am a data scientist with seven years of experience crafting impactful, data-driven business solutions. 
 <br>What sets me apart? I am a curiosity-led, creative, interdisplinary thinker, with a talent for active listening and working across diverse perspectives, so that I can drive innovation that truly meets my clients' needs.
 <br>I am passionate about empowering others and using data to promote understanding and create a better, fairer world. And while I thrive on intellectual challenge, I also value being inclusive and collaborative and forming authentic connections. 
+
 <br>
 
 ### Technical skills
@@ -44,6 +45,7 @@ Stanford University (Coursera), 2019
 ### Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
 <br>Analytics and reporting lead for Marketing and Insights team. Provided bespoke business intelligence service to bring modern data science tools and frameworks to strategic decision making. Developed statistical analysis and forecasting models to help define and segment audiences for 80+ successful campaigns. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
+
 <br>
 
 
