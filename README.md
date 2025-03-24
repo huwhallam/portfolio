@@ -64,6 +64,7 @@ I draw on two datasets, from the Office of National Statistics (ONS), which reco
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
 
 <br>
+<br>
 
 #### Record temperatures: how London's weather is becoming more volatile
 ##### <i>Data visualisation using Matplotlib</i>
@@ -72,6 +73,7 @@ This data visualisation explores how London's weather is changing. I show the ma
 <img src="assets/London%20record%20air%20temperatures.png" alt="A chart showing the minima and maxima air temperature in London for each calendar day as recorded across 2014-2023, as well as the 84 maxima and minima recorded in 2024 that exceed those previously recorded.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/London%20record%20temperatures.ipynb">View full London record temperatures Jupyter notebook</a>
 
+<br>
 <br>
 
 ### Data Structures and Algorithms
