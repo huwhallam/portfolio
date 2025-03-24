@@ -42,12 +42,12 @@ Stanford University (Coursera), 2019
  
 ### Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
-<br>Analytics and reporting lead for mass fundraising and alumni engagement team. Defined and segmented audiences for 80+ campaigns, soliciting 8k gifts and generating £2.2M in philanthropic revenue. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
+<br>Analytics and reporting lead for Marketing and Insights team. Provided bespoke business intelligence service to bring modern data science tools and frameworks to strategic decision making. Developed statistical analysis and forecasting models to help define and segment audiences for 80+ successful campaigns. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
 <br>
 
 
 ### Projects
-<i>This section is still under construction</i>
+
 #### Earnings or environment: an exploration of the relationship between wellbeing, access to nature and earnings across London's boroughs 
 ##### <i>Data visualisation using Geopandas and Matplotlib</i>
 In this project, I explore and visualise the relationship between wellbeing, greenspace and earnings across different parts of London. I ask:
