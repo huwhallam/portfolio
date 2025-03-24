@@ -62,14 +62,18 @@ I draw on two datasets, from the Office of National Statistics (ONS), which reco
 
 <img src="assets/Earnings%20or%20Environment.png" alt="Three maps of London highlighting boroughs with, respectively, the highest concentration of green and blue spaces, the median score out of ten given in response to the survey question, 'To what extent do you feel the things you do in your life are worthwhile?', and average weekly earnings.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
+
 <br>
+
 #### Record temperatures: how London's weather is becoming more volatile
 ##### <i>Data visualisation using Matplotlib</i>
 This data visualisation explores how London's weather is changing. I show the many instances in 2024 when daily minima and maxima air temperature exceeded the lowest and highest temperatures for that day recorded in the preceding decade. 
 
 <img src="assets/London%20record%20air%20temperatures.png" alt="A chart showing the minima and maxima air temperature in London for each calendar day as recorded across 2014-2023, as well as the 84 maxima and minima recorded in 2024 that exceed those previously recorded.">
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/London%20record%20temperatures.ipynb">View full London record temperatures Jupyter notebook</a>
+
 <br>
+
 ### Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
 <ol>
