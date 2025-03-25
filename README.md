@@ -66,7 +66,7 @@ I draw on two datasets, from the Office of National Statistics (ONS), which reco
 <br>
 <br>
 
-#### Record temperatures: how London's weather is becoming more volatile
+#### Record temperatures: is London's weather is becoming more volatile?
 ##### <i>Data visualisation using Matplotlib</i>
 This data visualisation explores how London's weather is changing. I show the many instances in 2024 when daily minima and maxima air temperature exceeded the lowest and highest temperatures for that day recorded in the preceding decade. 
 
