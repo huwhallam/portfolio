@@ -1,14 +1,14 @@
 # Senior Data Scientist - Insights Manager - BI and Analytics Lead
 I'm Huw. I transform complex data into meaningful stories that drive real-world impact. With seven years of experience, I've learned that the most powerful insights emerge when curiosity meets creativity. My approach goes beyond technical skills—I'm an interdisciplinary thinker who listens deeply and bridges diverse perspectives to craft solutions that genuinely solve my clients' most pressing challenges.
-<p>Data isn't just numbers to me; it's a tool for understanding and creating positive change. I'm driven by a belief that analytics can be a force for empowerment and equity, breaking down barriers and illuminating new possibilities. Whether I'm untangling a complex problem or collaborating with a team, I bring intellectual rigor and genuine human connection to every project.
-<p>My professional mission is simple: to use data as a lens for understanding the world more clearly and making it work better for everyone.
+<br>Data isn't just numbers to me; it's a tool for understanding and creating positive change. I'm driven by a belief that analytics can be a force for empowerment and equity, breaking down barriers and illuminating new possibilities. Whether I'm untangling a complex problem or collaborating with a team, I bring intellectual rigor and genuine human connection to every project.
+<br>My professional mission is simple: to use data as a lens for understanding the world more clearly and making it work better for everyone.
 
 <br>
 <br>
 
 ### Technical skills
 
-Python/Pandas  |  Google Cloud Platform |  Machine learning  |  Data visualisation  |  Statistics and forecasting  |  Tableau  |  PowerBI  |  Alteryx  |  SQL
+Python/Pandas  -  Google Cloud Platform -  Machine learning  -  Data visualisation  -  Statistics and forecasting  -  Tableau  -  PowerBI  -  Alteryx  -  SQL
 
 <br>
 
