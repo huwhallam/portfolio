@@ -90,7 +90,7 @@
 
 
 
-# Senior Data Scientist - Insights Manager - BI and Analytics Lead
+<h1></h1> Senior Data Scientist - Insights Manager - BI and Analytics Lead</h1>
 I'm Huw. I transform complex data into meaningful stories that drive real-world impact. With seven years of experience, I've learned that the most powerful insights emerge when curiosity meets creativity. My approach goes beyond technical skills—I'm an interdisciplinary thinker who listens deeply and bridges diverse perspectives to craft solutions that genuinely solve my clients' most pressing challenges.
 
 Data isn't just numbers to me; it's a tool for understanding and creating positive change. I'm driven by a belief that analytics can be a force for empowerment and equity, breaking down barriers and illuminating new possibilities. Whether I'm untangling a complex problem or collaborating with a team, I bring intellectual rigor and genuine human connection to every project.
@@ -195,9 +195,31 @@ This project creates a neural network from scratch using Numpy. The purpose was 
 <img src="assets/Neural%20network%20diagram.png" alt="Diagram of a neural network containing two inputs, a single hidden layer with three neurons, and one output.">
 <div id="myModal" class="modal">
  <span class="close">&times;</span>
- <img class="modal-content" id="img01">
+ <img class="modal-content" id="img02">
  <div id="caption"></div>
 </div> 
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img02");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Neural%20network%20from%20scratch.ipynb">View full Neural network from scratch Jupyter notebook</a>
 
 <br>
