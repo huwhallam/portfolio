@@ -2,7 +2,7 @@
 <head>
  <meta name="viewport" content="width=device-width, initial-scale=1"> 
 <style>
-body {font-family: Arial, Helvetica, sans-serif;}
+/* body {font-family: Arial, Helvetica, sans-serif;} */
  
 /* Style the Image Used to Trigger the Modal */
 #myImg {
@@ -179,6 +179,11 @@ span.onclick = function() {
 This data visualisation explores how London's weather is changing. I show the many instances in 2024 when daily minima and maxima air temperature exceeded the lowest and highest temperatures for that day recorded in the preceding decade. 
 
 <img src="assets/London%20record%20air%20temperatures.png" alt="A chart showing the minima and maxima air temperature in London for each calendar day as recorded across 2014-2023, as well as the 84 maxima and minima recorded in 2024 that exceed those previously recorded.">
+<div id="myModal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="img01">
+ <div id="caption"></div>
+</div> 
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/London%20record%20temperatures.ipynb">View full London record temperatures Jupyter notebook</a>
 
 <br>
@@ -188,6 +193,11 @@ This data visualisation explores how London's weather is changing. I show the ma
 This project creates a neural network from scratch using Numpy. The purpose was to help me fully understand the mathematics of neural networks and how to translate it into code without recourse to ML libraries. (A subsequent project will construct a more elaborate convolutional neural network using Pytorch.)
 
 <img src="assets/Neural%20network%20diagram.png" alt="Diagram of a neural network containing two inputs, a single hidden layer with three neurons, and one output.">
+<div id="myModal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="img01">
+ <div id="caption"></div>
+</div> 
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Neural%20network%20from%20scratch.ipynb">View full Neural network from scratch Jupyter notebook</a>
 
 <br>
