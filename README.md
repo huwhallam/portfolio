@@ -8,13 +8,13 @@ My professional mission is simple: to use data as a lens for understanding the w
 
 <br>
 
-### Technical skills
+## Technical skills
 
 Python/Pandas  -  Google Cloud Platform -  Machine learning  -  Data visualisation  -  Statistics and forecasting  -  Tableau  -  PowerBI  -  Alteryx  -  SQL
 
 <br>
 
-### Education and training
+## Education and training
 <ul>
  <li>Micromaster program in Statistics and Data Science - current</li>
  <li>PhD, Humanities research, King's College London - 2008-14</li>
@@ -31,16 +31,16 @@ Python/Pandas  -  Google Cloud Platform -  Machine learning  -  Data visualisati
 </ul>
 <br>
  
-### Work Experience
+## Work Experience
 <b>Senior Data and Insights Analyst</b>, the University of Oxford (2017-2025)
 <br>Analytics and reporting lead for Marketing and Insights team. Provided bespoke business intelligence service to bring modern data science tools and frameworks to strategic decision making. Developed statistical analysis and forecasting models to help define and segment audiences for 80+ successful campaigns. Promoted in 2018 to manage insights team and later digital marketing team (2021-22). Chaired the development and alumni engagement data governance group (2021-22).
 
 <br>
 
 
-### Projects
+## Projects
 
-#### Earnings or environment: an exploration of the relationship between wellbeing, access to nature and earnings across London's boroughs 
+### Earnings or environment: an exploration of the relationship between wellbeing, access to nature and earnings across London's boroughs 
 ##### <i>Data visualisation using Geopandas and Matplotlib</i>
 In this project, I explore and visualise the relationship between wellbeing, greenspace and earnings across different parts of London. I ask:
 
@@ -49,13 +49,18 @@ In this project, I explore and visualise the relationship between wellbeing, gre
 
 I draw on two datasets, from the Office of National Statistics (ONS), which record various wellbeing and wealth metrics across each of London's boroughs. I link these with Ordnance Survey data charting the extent of green and blue spaces - the city’s parks, gardens, trees, green spaces, rivers and wetlands, and features such as green roofs.
 
-<img src="assets/Earnings%20or%20Environment.png" alt="Three maps of London highlighting boroughs with, respectively, the highest concentration of green and blue spaces, the median score out of ten given in response to the survey question, 'To what extent do you feel the things you do in your life are worthwhile?', and average weekly earnings.">
+<img id="myImg" src="assets/Earnings%20or%20Environment.png" alt="Three maps of London highlighting boroughs with, respectively, the highest concentration of green and blue spaces, the median score out of ten given in response to the survey question, 'To what extent do you feel the things you do in your life are worthwhile?', and average weekly earnings." style="width:100%;max-width:600px">
+<div id="myModal" class="modal">
+ <span class="close">&times;</span>
+ <img class="modal-content" id="img01">
+ <div id="caption"></div>
+</div> 
 <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb">View full Earnings and environment Jupyter notebook</a>
 
 <br>
 <br>
 
-#### Record temperatures: is London's weather is becoming more volatile?
+### Record temperatures: is London's weather is becoming more volatile?
 ##### <i>Data visualisation using Matplotlib</i>
 This data visualisation explores how London's weather is changing. I show the many instances in 2024 when daily minima and maxima air temperature exceeded the lowest and highest temperatures for that day recorded in the preceding decade. 
 
@@ -65,7 +70,7 @@ This data visualisation explores how London's weather is changing. I show the ma
 <br>
 <br>
 
-#### Neural network from scratch
+### Neural network from scratch
 This project creates a neural network from scratch using Numpy. The purpose was to help me fully understand the mathematics of neural networks and how to translate it into code without recourse to ML libraries. (A subsequent project will construct a more elaborate convolutional neural network using Pytorch.)
 
 <img src="assets/Neural%20network%20diagram.png" alt="Diagram of a neural network containing two inputs, a single hidden layer with three neurons, and one output.">
@@ -74,7 +79,7 @@ This project creates a neural network from scratch using Numpy. The purpose was 
 <br>
 <br>
 
-### Data Structures and Algorithms
+## Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
 <ol>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Dynamic%20Arrays.ipynb">Dynamic Arrays</a> </li>
