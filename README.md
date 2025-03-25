@@ -7,39 +7,24 @@ I am a data scientist with seven years of experience crafting impactful, data-dr
 
 ### Technical skills
 
-Python/Pandas
-Google Cloud Platform
-Machine learning
-Tableau
-PowerBI
-Alteryx
-SQL
-Blackbaud CRM
+Python/Pandas  |  Google Cloud Platform |  Machine learning  |  Data visualisation  |  Statistics and forecasting  |  Tableau  |  PowerBI  |  Alteryx  |  SQL
 
 <br>
 
 ### Education and training
 <ul>
  <li>Micromaster program in Statistics and Data Science - current</li>
- <li>PhD, Humanities research, King's College London</li>
- <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons)</li>
+ <li>PhD, Humanities research, King's College London - 2008-14</li>
+ <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons) - 2001-06</li>
 </ul>
-
-Mathematics for Machine Learning
-Imperial College London, 2024
-
-Data Science with Python
-University of Michigan, 2024
-
-Professional Data Engineer
-Google Cloud, 2023
-
-ODSC Machine Learning Certification
-AI+ Training, 2022
-
-Machine Learning 
-Stanford University (Coursera), 2019
-
+<br>
+<ul>
+ <li>Mathematics for Machine Learning, Imperial College London, 2024</li>
+ <li>Data Science with Python, University of Michigan, 2024</li>
+ <li>Professional Data Engineer, Google Cloud Platform, 2023</li>
+ <li>ODSC Machine Learning Certification, AI+ Training, 2022</li>
+ <li>Machine Learning, Stanford University (Coursera), 2019</li>
+</ul>
 <br>
  
 ### Work Experience
