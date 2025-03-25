@@ -5,7 +5,7 @@ Data isn't just numbers to me; it's a tool for understanding and creating positi
 
 My professional mission is simple: to use data as a lens for understanding the world more clearly and making it work better for everyone.
 
-<br>
+
 <br>
 
 ### Technical skills
@@ -20,7 +20,8 @@ Python/Pandas  -  Google Cloud Platform -  Machine learning  -  Data visualisati
  <li>PhD, Humanities research, King's College London - 2008-14</li>
  <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons) - 2001-06</li>
 </ul>
-<br>
+
+
 <ul>
  <li>Mathematics for Machine Learning, Imperial College London, 2024</li>
  <li>Data Science with Python, University of Michigan, 2024</li>
