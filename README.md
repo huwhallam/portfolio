@@ -76,6 +76,15 @@ This data visualisation explores how London's weather is changing. I show the ma
 <br>
 <br>
 
+#### Neural network from scratch
+This project creates a neural network from scratch using Numpy. The purpose was to help me fully understand the mathematics of neural networks and how to translate it into code without recourse to ML libraries. (A subsequent project will construct a more elaborate convolutional neural network using Pytorch.)
+
+<img src="assets/Neural%20network%20diagram.png" alt="Diagram of a neural network containing two inputs, a single hidden layer with three neurons, and one output.">
+<a href="https://github.com/huwhallam/portfolio/blob/main/assets/Neural%20network%20from%20scratch.ipynb">View full Neural network from scratch Jupyter notebook</a>
+
+<br>
+<br>
+
 ### Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
 <ol>
