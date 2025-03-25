@@ -1,7 +1,8 @@
 # Senior Data Scientist - Insights Manager - BI and Analytics Lead
-I am a data scientist with seven years of experience crafting impactful, data-driven business solutions. 
-<br>What sets me apart? I am a curiosity-led, creative, interdisplinary thinker, with a talent for active listening and working across diverse perspectives, so that I can drive innovation that truly meets my clients' needs.
-<br>I am passionate about empowering others and using data to promote understanding and create a better, fairer world. And while I thrive on intellectual challenge, I also value being inclusive and collaborative and forming authentic connections. 
+I'm Huw. I transform complex data into meaningful stories that drive real-world impact. With seven years of experience, I've learned that the most powerful insights emerge when curiosity meets creativity. My approach goes beyond technical skills—I'm an interdisciplinary thinker who listens deeply and bridges diverse perspectives to craft solutions that genuinely solve my clients' most pressing challenges.
+<br>Data isn't just numbers to me; it's a tool for understanding and creating positive change. I'm driven by a belief that analytics can be a force for empowerment and equity, breaking down barriers and illuminating new possibilities. Whether I'm untangling a complex problem or collaborating with a team, I bring intellectual rigor and genuine human connection to every project.
+<br>My professional mission is simple: to use data as a lens for understanding the world more clearly and making it work better for everyone.
+
 
 <br>
 
