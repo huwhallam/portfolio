@@ -16,7 +16,7 @@ Python/Pandas  -  Google Cloud Platform -  Machine learning  -  Data visualisati
 
 ### Education and training
 <ul>
- <li>Micromaster program in Statistics and Data Science - current</li>
+ <li>Micromaster program in Statistics and Data Science, MITx - current</li>
  <li>PhD, Humanities research, King's College London - 2008-14</li>
  <li>BA(Hons)/BMus(Hons), the University of Melbourne. First class honours, faculty prize for BA(Hons) - 2001-06</li>
 </ul>
