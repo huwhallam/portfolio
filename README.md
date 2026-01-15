@@ -74,7 +74,7 @@ This project creates a neural network from scratch using Numpy. The purpose was 
 <br>
 <br>
 
-### Data Structures and Algorithms
+#### Data Structures and Algorithms
 I'm currently upskilling on DSA. I'll be sharing my notes here.
 <ol>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Dynamic%20Arrays.ipynb">Dynamic Arrays</a> </li>
@@ -90,3 +90,9 @@ I'm currently upskilling on DSA. I'll be sharing my notes here.
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Trees.ipynb">Trees</a> </li>
  <li><a href="https://github.com/huwhallam/portfolio/blob/main/dsa/Graphs.ipynb">Graphs</a> </li>
 </ol>
+
+#### Abundance tech
+This is an initial position piece raising questions about the economic implications of AI adoption. I highlight how economic thought is intimately tied to the notion of scarcity and that this may be at odds with the potential for abundance AI offers. 
+I am currently working on expanding this piece.
+
+<a href="https://github.com/huwhallam/portfolio/blob/main/assets/Neural%20network%20from%20scratch.ipynb">View full text here</a>
