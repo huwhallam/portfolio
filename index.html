@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huw Hallam — Data Scientist & AI Safety Researcher</title>
+  <meta name="description" content="Huw Hallam — data scientist and AI safety researcher. SPAR Research Fellow. MIT Statistics & Data Science. Seven years at the University of Oxford.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav">
+    <div class="container site-nav__inner">
+      <a href="index.html" class="site-nav__brand">Huw Hallam</a>
+      <ul class="site-nav__links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#writing">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div>
+          <p class="hero__eyebrow">Portfolio</p>
+          <h1 class="hero__name">Huw Hallam</h1>
+          <p class="hero__tagline"> Data scientist &middot; AI safety and governance researcher</p>
+          <p class="hero__bio">
+            I work at the intersection of <strong>quantitative analysis and AI governance</strong>.
+            My background combines seven years as a senior data analyst at the University of Oxford
+            with a humanities PhD and a career-long interest in how institutional and informational
+            structures shape outcomes. I think like a researcher and work like an analyst — and I take
+            seriously the question of whether the systems we are building will support human flourishing and change the world for the better.
+          </p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary">View projects</a>
+            <a href="#research" class="btn btn--outline">Read my research</a>
+            <a href="https://github.com/huwhallam" class="btn btn--outline" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+        <div>
+          <img src="assets/img/HUW_245_cropped.jpg" alt="Huw Hallam" class="hero__photo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CREDENTIALS ===== -->
+  <div class="credentials">
+    <div class="container">
+      <div class="credentials__inner">
+        <span class="credentials__label">Background</span>
+        <span class="credential-item credential-item--highlight">
+          SPAR Research Fellowship &rsquo;26
+        </span>
+        <span class="credential-item credential-item--highlight">
+          Apart Research &mdash; 2nd prize
+        </span>
+        <span class="credential-item">
+          MIT MicroMasters &mdash; Statistics &amp; Data Science &mdash; 94.2% GPA
+        </span>
+        <span class="credential-item">
+          University of Oxford &mdash; Senior Analyst &mdash; 7 years
+        </span>
+        <span class="credential-item">
+          PhD, King&rsquo;s College London
+        </span>
+      </div>
+    </div>
+  </div>
+
+ <!-- ===== PROJECTS ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Projects</p>
+        <h2 class="section__title">Data Science &amp; Analysis</h2>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- Apart Research -->
+        <div class="project-card" style="cursor:default;">
+          <div class="project-card__img--placeholder">&#9670;</div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Apart Research Hackathon — 2nd Prize</h3>
+            <p class="project-card__summary">
+              A competitive AI risk forecasting entry for the Apart Research hackathon,
+              placing second. Demonstrates AI safety analysis under time pressure and
+              competitive conditions.
+            </p>
+            <div class="project-card__footer">
+              <div class="tags">
+                <span class="tag tag--ai-safety">AI Safety</span>
+                <span class="tag tag--policy">Forecasting</span>
+              </div>
+              <span class="project-card__link" style="color:var(--text-subtle); font-style:italic; font-size:0.78rem;">Coming soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Agent Marketplace RL -->
+        <a href="https://agent-marketplace-rl.streamlit.app/" class="project-card" target="_blank" rel="noopener">
+          <div class="project-card__img--placeholder">&#9651;</div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Agent Marketplace RL Simulation</h3>
+            <p class="project-card__summary">
+              Interactive reinforcement learning simulation modelling how AI agents in competitive
+              marketplaces converge on gaming or genuine value delivery depending on reputation
+              infrastructure design. Built to support the SPAR research paper.
+            </p>
+            <div class="project-card__footer">
+              <div class="tags">
+                <span class="tag tag--ml">RL / DQN</span>
+                <span class="tag tag--ai-safety">AI Safety</span>
+              </div>
+              <span class="project-card__link">Live demo &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Earnings or Environment -->
+        <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Earnings%20or%20environment.ipynb" class="project-card" target="_blank" rel="noopener">
+          <img src="assets/Earnings%20or%20Environment.png"
+               alt="Three maps of London showing green space, wellbeing scores, and weekly earnings by borough"
+               class="project-card__img">
+          <div class="project-card__body">
+            <h3 class="project-card__title">Earnings or Environment?</h3>
+            <p class="project-card__summary">
+              Geospatial analysis of the relationship between wellbeing, access to green space,
+              and earnings across London&rsquo;s boroughs. Uses ONS data and Ordnance Survey spatial
+              datasets with GeoPandas.
+            </p>
+            <div class="project-card__footer">
+              <div class="tags">
+                <span class="tag tag--data">Data Viz</span>
+                <span class="tag tag--data">Geospatial</span>
+              </div>
+              <span class="project-card__link">View notebook &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- London Temperatures -->
+        <a href="https://github.com/huwhallam/portfolio/blob/main/assets/London%20record%20temperatures.ipynb" class="project-card" target="_blank" rel="noopener">
+          <img src="assets/London%20record%20air%20temperatures.png"
+               alt="Chart showing 2024 London temperature records against the preceding decade"
+               class="project-card__img">
+          <div class="project-card__body">
+            <h3 class="project-card__title">Is London&rsquo;s Weather Getting More Volatile?</h3>
+            <p class="project-card__summary">
+              Time series analysis of London temperature records, examining how many 2024 daily
+              extremes exceeded any equivalent day in the preceding decade and whether this
+              reflects a broader trend.
+            </p>
+            <div class="project-card__footer">
+              <div class="tags">
+                <span class="tag tag--data">Time Series</span>
+                <span class="tag tag--data">Data Viz</span>
+              </div>
+              <span class="project-card__link">View notebook &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- Neural Network -->
+        <a href="https://github.com/huwhallam/portfolio/blob/main/assets/Neural%20network%20from%20scratch.ipynb" class="project-card" target="_blank" rel="noopener">
+          <img src="assets/Neural%20network%20diagram.png"
+               alt="Diagram of a neural network with two inputs, one hidden layer, and one output"
+               class="project-card__img">
+          <div class="project-card__body">
+            <h3 class="project-card__title">Neural Network from Scratch</h3>
+            <p class="project-card__summary">
+              Full implementation of a neural network using NumPy only, with hand-coded
+              forward and backpropagation. Built to develop a thorough understanding of
+              the underlying mathematics.
+            </p>
+            <div class="project-card__footer">
+              <div class="tags">
+                <span class="tag tag--ml">ML</span>
+                <span class="tag tag--data">NumPy</span>
+              </div>
+              <span class="project-card__link">View notebook &rarr;</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH ===== -->
+  <section class="section" id="research">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Research</p>
+        <h2 class="section__title">AI Safety &amp; Governance</h2>
+      </div>
+
+      <!-- SPAR Featured -->
+      <div class="research-featured">
+        <div class="research-featured__label">SPAR Research Fellowship &rsquo;26</div>
+        <div class="research-featured__body">
+          <h3 class="research-featured__title">The Infrastructure of Perception</h3>
+          <p class="research-featured__subtitle">Governing AI Agent Behaviour Through Information Environment Design</p>
+          <div class="research-featured__meta">
+            <span><strong>Programme:</strong> SPAR (Supervised Program for Alignment Research)</span>
+            <span><strong>Completed:</strong> May 2026</span>
+          </div>
+          <p class="research-featured__summary">
+            Governance discussions about AI agents typically focus on two levers: access control (what agents can do)
+            and alignment (what they want). This paper identifies a third, undertheorised lever: the design
+            of agents' <em>information environments</em>. Three failure modes are analysed: externality
+            blindness arising from inadequate success signals; reputation gaming in competitive agent marketplaces (supported by an RL simulation); and the emergence of <em>agentic capitalism</em>,
+            in which personal agents become instruments of persuasion on behalf of third parties. The analysis
+            argues for architectural governance of the shared information infrastructure through which agents
+            perceive economic reality.
+          </p>
+          <div class="research-featured__footer">
+            <div class="tags">
+              <span class="tag tag--ai-safety">AI Safety</span>
+              <span class="tag tag--policy">Policy</span>
+              <span class="tag tag--econ">Economics</span>
+              <span class="tag tag--ml">RL Simulation</span>
+            </div>
+            <a href="projects/infrastructure-of-perception.html" class="btn btn--primary">
+              Read the research &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== WRITING ===== -->
+  <section class="section" id="writing">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Writing</p>
+        <h2 class="section__title">Thinking on Paper</h2>
+      </div>
+
+      <a href="Abundance%20tech.pdf" class="writing-item" target="_blank" rel="noopener">
+        <div class="writing-item__date">2025</div>
+        <div class="writing-item__content">
+          <h3>Abundance Tech</h3>
+          <p>A position piece highlighting tensions between economic theory and the possibilities for social change introduced by AI. Standard economic thought is organised around scarcity; AI promises genuine abundance. AI policy must address this difficult tension if the promise of abundance is to be harnessed and realised.</p>
+          <div class="tags" style="margin-top: 0.5rem;">
+            <span class="tag tag--econ">Economics</span>
+            <span class="tag tag--ai-safety">AI safety</span>
+            <span class="tag tag--policy">Policy</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about" style="background: var(--bg-subtle);">
+    <div class="container">
+      <div class="section__header">
+        <p class="section__eyebrow">Background</p>
+        <h2 class="section__title">About</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 860px;">
+        <div>
+          <h4 style="margin-bottom: 0.75rem;">Work experience</h4>
+          <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0.5rem;">
+            <strong style="color: var(--text);">Senior Data and Insights Analyst</strong><br>
+            University of Oxford &middot; 2017&ndash;2025
+          </p>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Analytics and reporting lead for Marketing and Insights team. Delivered bespoke BI
+            and data science solutions to guide strategic decision-making: statistical models,
+            forecasting, audience segmentation for 80+ campaigns, data governance.
+            Built self-service infrastructure that reduced analyst turnaround from days
+            to minutes, serving hundreds of users. Led cross-department GDPR compliance
+            analytics (5M+ records). Received staff excellence prize.
+          </p>
+        </div>
+
+        <div>
+          <h4 style="margin-bottom: 0.75rem;">Education &amp; training</h4>
+          <ul style="list-style: none; font-size: 0.9rem; color: var(--text-muted); line-height: 1.8;">
+            <li><strong style="color: var(--text);">MIT MicroMasters</strong> &mdash; Statistics &amp; Data Science &mdash; 94.2% GPA</li>
+            <li><strong style="color: var(--text);">PhD, Humanities</strong> &mdash; King&rsquo;s College London</li>
+            <li><strong style="color: var(--text);">BA / BMus (First Class, Faculty Prize)</strong> &mdash; University of Melbourne</li>
+            <li style="margin-top: 0.5rem; font-size: 0.82rem; color: var(--text-subtle);">+ Mathematics for Machine Learning (Imperial), GCP Professional Data Engineer, Stanford ML, ODSC ML Certification</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="site-footer__name">Huw Hallam</span>
+      <ul class="site-footer__links">
+        <li><a href="https://github.com/huwhallam" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:huw.hallam@protonmail.com">Email</a></li>
+      </ul>
+      <p class="site-footer__copy">Built with HTML &amp; CSS &middot; Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+</body>
+</html>

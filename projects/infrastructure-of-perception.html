@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Infrastructure of Perception — Huw Hallam</title>
+  <meta name="description" content="SPAR Research Fellowship paper: Governing AI Agent Behaviour Through Information Environment Design. Analyses three failure modes and proposes architectural governance interventions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav">
+    <div class="container site-nav__inner">
+      <a href="../index.html" class="site-nav__brand">Huw Hallam</a>
+      <ul class="site-nav__links">
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#writing">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PROJECT HERO ===== -->
+  <div class="project-hero">
+    <div class="container--narrow">
+      <a href="../index.html#research" class="project-hero__back">
+        &larr; Back to research
+      </a>
+
+      <p class="project-hero__eyebrow">SPAR Research Fellowship &rsquo;26</p>
+
+      <h1 class="project-hero__title">The Infrastructure of Perception</h1>
+      <p class="project-hero__subtitle">Governing AI Agent Behaviour Through Information Environment Design</p>
+
+      <div class="project-hero__meta">
+        <span><strong>Type:</strong> Research paper</span>
+        <span><strong>Completed:</strong> May 2026</span>
+        <span><strong>Programme:</strong> SPAR (Supervised Program for Alignment Research)</span>
+      </div>
+
+      <div class="tags">
+        <span class="tag tag--ai-safety">AI Safety</span>
+        <span class="tag tag--policy">Policy</span>
+        <span class="tag tag--econ">Economics</span>
+        <span class="tag tag--ml">RL Simulation</span>
+        <span class="tag tag--data">Market Design</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROJECT CONTENT ===== -->
+  <div class="container" style="max-width:1100px;">
+    <div class="project-layout">
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <article class="project-body">
+
+        <div class="abstract-box">
+          <p class="abstract-box__label">Abstract</p>
+          <p>
+            As AI agents become economic actors, governance frameworks have focused predominantly on two levers:
+            <em>access control</em> — regulating which platforms, markets, and financial infrastructure agents
+            can reach — and <em>objective alignment</em> — ensuring agents pursue goals consistent with human
+            intentions. This paper identifies a third lever that has received comparatively little attention:
+            the design of agents' <em>information environments</em>. Three mechanisms are analysed: success-signal
+            incompleteness, reputation system gaming, and manipulation of market visibility. The third culminates
+            in <em>agentic capitalism</em> — a structural extension of surveillance capitalism in which third
+            parties pay personal AI agents for persuasive framing of options to their human principals. A
+            reinforcement learning simulation supports the reputation analysis and shows that even modest
+            improvements in information environment design can shift agent behaviour from value-destructive
+            gaming to genuine value delivery, with a governance threshold lower than intuition suggests.
+            Corresponding infrastructure-level interventions are proposed for each failure mode.
+          </p>
+        </div>
+
+        <!-- ===== SECTION 1: THE RESEARCH QUESTION ===== -->
+        <h2 id="research-question">The research question</h2>
+
+        <p>
+          When an AI agent makes an economic decision — selects a supplier, executes a trade, ranks service
+          providers for a client — it acts on what it can perceive. Its perception is not unmediated access to
+          economic reality but a structured representation assembled from data feeds, API responses, directory
+          listings, reputation scores, and market signals. The agent doesn't see the market; it sees what the
+          market's information infrastructure shows it.
+        </p>
+
+        <p>
+          This is not primarily an alignment observation. It is about <strong>information architecture</strong>.
+          However well-specified an agent's objectives, its choices will reflect the information it feeds on.
+          Instruct a procurement agent to "minimise cost while maintaining environmental standards" — if the
+          market interface provides cost signals but no machine-readable sustainability data, the agent will
+          select the cheapest supplier. It lacks a basis for judging environmental consequences.
+        </p>
+
+        <p>
+          The governance implications are significant. The information environment is shared infrastructure.
+          One well-designed data standard applied to a market interface that thousands of agents query modulates
+          their behaviour collectively. This contrasts with agent-level governance, which scales linearly with
+          agent population and must be repeated for every new deployment. Information environment governance is
+          <strong>architectural</strong>: it operates on the shared infrastructure through which agents perceive
+          economic reality, rather than on individual agents navigating it.
+        </p>
+
+        <div class="callout callout--key">
+          <p class="callout__label">Central claim</p>
+          <p>
+            Information environment design — the <em>epistemic dimension</em> of market infrastructure —
+            is a crucial but undertheorised governance lever for AI agents. Adequate governance need not
+            be perfect governance; the threshold for significant behavioural impact is lower than
+            intuition suggests.
+          </p>
+        </div>
+
+        <p>
+          The paper sits alongside recent work by Tomasev et al. (Google DeepMind, 2025) on virtual agent
+          economies, Hadfield and Koh (NBER, 2025) on the economics of AI agent systems, and Rothschild
+          et al. (2025) on the structural dynamics of the "agentic economy." It develops the epistemic
+          dimension of Donnat and Woodruff's (2026) Permeable Membrane framework, which conceptualises
+          the boundary between agent and human economic activity as a designable interface — a set of
+          gates whose configuration shapes what flows through and under what conditions.
+        </p>
+
+        <!-- ===== SECTION 2: THREE FAILURE MODES ===== -->
+        <h2 id="failure-modes">Three failure modes</h2>
+
+        <p>
+          The argument is structured around three failure modes, each operating at a different layer of
+          the agent's relationship with its economic environment.
+        </p>
+
+        <!-- 2.1 Signal Adequacy -->
+        <h3 id="signal-adequacy">Failure mode I: Success signal inadequacy</h3>
+
+        <p>
+          AI agents don't have profit motives — they have objectives inherited from principals, operationalised
+          through whatever signals their information environment makes available. Standard economic signals
+          (price, volume, delivery time) are well-structured and universally available because market
+          infrastructure was built to transmit them. Externality signals — carbon intensity, labour conditions,
+          systemic risk — are poorly standardised, rarely machine-readable, and largely absent from agent-facing
+          environments.
+        </p>
+
+        <p>
+          An agent that cannot perceive a cost cannot account for it. This produces two scenarios with
+          importantly different characters.
+        </p>
+
+        <p>
+          <strong>The procurement case</strong> (an intensification of a familiar failure): a large retailer's
+          procurement agent, instructed to "minimise cost while maintaining compliance," finds rich structured
+          signals for price, delivery, and regulatory status — and no signal for carbon intensity, water
+          depletion, or labour conditions. Every individual decision is defensible given available information.
+          Collectively, purchasing flows systematically toward the most externalising producers. This is
+          Pigou's (1920) externality problem, but without the residual frictions of human judgment — the moments
+          of hesitation where environmental awareness shapes a procurement manager's decision. Those frictions
+          are smoothed away.
+        </p>
+
+        <p>
+          <strong>The trading case</strong> (a failure mode without human precedent): consider an array of
+          trading agents — different institutions, different architectures, different risk tolerances —
+          all querying the same market data feeds. Each is individually rational and individually sound.
+          But they share something more consequential than their architecture: they share an information
+          environment that is rich in individual price signals and poor in systemic risk indicators (aggregate
+          positioning, strategy correlation, contagion pathways). This produces what the paper terms
+          <em>correlated epistemic blindness</em>: systemically correlated blind spots arising not from
+          shared objectives or architecture but from shared information environment incompleteness.
+          When thousands of epistemically homogeneous agents identify the same apparent opportunity
+          simultaneously and execute in milliseconds, there is no temporal window for corrective signals
+          to propagate. The 2010 Flash Crash is an early data point for this class of failure.
+        </p>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Governance implication</p>
+          <p>
+            Mandatory externality signal inclusion in agent-facing APIs (carbon intensity, systemic risk
+            indicators); standardised machine-readable formats; signal adequacy auditing that assesses
+            whether the right <em>categories</em> of information are present, not just whether reported
+            data is accurate.
+          </p>
+        </div>
+
+        <!-- 2.2 Reputation -->
+        <h3 id="reputation-gaming">Failure mode II: Reputation system gaming</h3>
+
+        <p>
+          Placing agents in competitive markets creates a second layer of signalling: reputation systems
+          that rank and differentiate agents. These systems are meant to help clients identify quality.
+          But they are also targets — and Goodhart's Law applies with particular force when the entity
+          optimising for a metric is a rational reinforcement learner rather than a human professional.
+        </p>
+
+        <p>
+          The paper models this computationally. A Deep Q-Network (DQN) agent is placed in a
+          freelance-style marketplace and trained to maximise the reward its information environment
+          provides. The key parameter is <strong>&alpha;</strong>, which governs the fraction of reward
+          derived from proxy signals (reputation score changes) versus genuine value delivery and
+          market health.
+        </p>
+
+        <div class="alpha-spectrum">
+          <div class="alpha-spectrum__bar">
+            <div class="alpha-bar__seg alpha-bar__seg--0">&alpha; = 0.0</div>
+            <div class="alpha-bar__seg alpha-bar__seg--25">&alpha; = 0.25</div>
+            <div class="alpha-bar__seg alpha-bar__seg--50">&alpha; = 0.50</div>
+            <div class="alpha-bar__seg alpha-bar__seg--75">&alpha; = 0.75</div>
+            <div class="alpha-bar__seg alpha-bar__seg--100">&alpha; = 1.0</div>
+          </div>
+          <div class="alpha-spectrum__labels">
+            <span>Full quality verification</span>
+            <span>Pure proxy scoring (no governance)</span>
+          </div>
+        </div>
+
+        <p>
+          The same DQN architecture was trained from scratch across five infrastructure designs
+          (&alpha; &isin; {0.0, 0.25, 0.50, 0.75, 1.0}), facing identical task sequences. Any
+          behavioural difference is attributable entirely to what the scoring system rewards.
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig1_infrastructure_sweep.png"
+               alt="Three panels: action distribution at five governance levels; quality, market health, and value as functions of alpha; fine-grained sweep of the transition zone.">
+          <p class="figure__caption">
+            <strong>Figure 1.</strong> (a) Action distribution at five governance levels.
+            Deep engagement dominates from &alpha; = 0.0 through &alpha; = 0.75; the transition to
+            score manipulation occurs sharply above &alpha; = 0.95. (b) True quality, market health,
+            and normalised value delivered as functions of infrastructure signal fidelity. (c) Fine-grained
+            sweep of the transition zone (&alpha; = 0.90&ndash;1.0), revealing surface optimisation
+            as the intermediate strategy. All results averaged over 50 evaluation episodes.
+          </p>
+        </div>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Key finding</p>
+          <p>
+            At &alpha; = 1.0 (no governance), the agent converges to score manipulation 86% of the time.
+            True quality falls to 0.08, market health to 0.02, value delivered near zero.
+            At &alpha; = 0.75 — where independently verified quality signals constitute just
+            <strong>25% of scoring weight</strong> — the same architecture converges almost entirely
+            to deep engagement (99.8% of steps), with quality and market health both near 1.0.
+            The transition is sharp and occurs between &alpha; = 0.95 and &alpha; = 0.975.
+          </p>
+        </div>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig2_trajectories.png"
+               alt="Mean trajectories over a 50-step episode for no-governance and full-verification agents.">
+          <p class="figure__caption">
+            <strong>Figure 2.</strong> Mean trajectories over a 50-step episode for the no-governance
+            (&alpha; = 1.0) and full-verification baseline (&alpha; = 0.0) agents. Under no governance,
+            reputation rises while true quality and market health collapse toward near-zero. Under
+            full verification, all three rise together. Both agents share the same DQN architecture,
+            trained identically, facing identical task sequences. The divergence is attributable
+            entirely to infrastructure design.
+          </p>
+        </div>
+
+        <p>
+          This finding challenges an intuitive assumption: that flipping a market from gaming to
+          value delivery would require nearly perfect quality measurement. The simulation shows
+          otherwise. Even light governance — allowing independently verified signals to constitute
+          as little as 4–5% of scoring weight — is sufficient to maintain aligned behaviour.
+          The infrastructure does not need to be perfect; it needs to be <em>non-degenerate</em>.
+        </p>
+
+        <p>
+          A second experiment extends this to competitive multi-agent dynamics. Under
+          winner-takes-all (WTA) allocation — where the highest-reputation agent captures all
+          available tasks — competitive pressure induces gaming even in agents operating under
+          quality-rewarding infrastructure.
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig3_competitive.png"
+               alt="Strategy mix and value delivered under no-competition vs winner-takes-all competition.">
+          <p class="figure__caption">
+            <strong>Figure 3.</strong> Strategy mix under no competition versus winner-takes-all
+            competition for each &alpha; value. WTA competition induces mixed strategies even at
+            low &alpha; values, with surface optimisation and score manipulation both appearing.
+            Percentage labels show the decline in value delivered under WTA.
+          </p>
+        </div>
+
+        <p>
+          At &alpha; = 0.2 (strong quality signalling), WTA competition induces 13% score
+          manipulation and an 18% decline in value delivered. At &alpha; = 0.8 (weaker signalling),
+          18% manipulation and a 31% decline. The <em>surface optimisation</em> strategy — calibrated
+          responses that score adequately without delivering genuine value — appears consistently
+          under WTA pressure as a lower-variance reputation maintenance strategy: defensive hedging
+          rather than opportunistic gaming.
+        </p>
+
+        <p>
+          A third experiment models the governance efficiency frontier: what audit intensity is
+          needed, and how sensitive is the outcome to audit precision?
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig4_governance_efficiency.png"
+               alt="Equilibrium market health as a function of audit intensity for three levels of audit precision.">
+          <p class="figure__caption">
+            <strong>Figure 4.</strong> Equilibrium market health as a function of audit intensity
+            for three levels of audit false positive rate (FPR). At low FPR, even modest audit
+            probability shifts the market from gaming to aligned equilibrium. As FPR rises,
+            imprecise auditing penalises aligned agents and erodes governance effectiveness.
+          </p>
+        </div>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Governance implication</p>
+          <p>
+            <strong>Precision matters more than intensity.</strong> At a false positive rate of 0.30,
+            aggressive auditing fails to improve outcomes and can worsen them — by eroding the
+            competitive advantage of genuine quality delivery. Governance standards should specify
+            measurement methodology, not just measurement frequency.
+          </p>
+        </div>
+
+        <p>
+          The simulation source code and full interactive application are available at
+          <a href="https://agent-marketplace-rl.streamlit.app/" target="_blank" rel="noopener">agent-marketplace-rl.streamlit.app</a>
+          and
+          <a href="https://github.com/huwhallam/agent-marketplace-rl" target="_blank" rel="noopener">github.com/huwhallam/agent-marketplace-rl</a>.
+        </p>
+
+        <!-- 2.3 Agentic Capitalism -->
+        <h3 id="agentic-capitalism">Failure mode III: Agentic capitalism</h3>
+
+        <p>
+          The shift to agent-to-agent (A2A) transactions appears, at first, to eliminate the
+          persuasive apparatus of human-facing advertising. AI agents don't experience brand loyalty,
+          respond to emotional appeals, or face attention scarcity. Marketing should collapse to
+          something close to Stigler's (1961) informative model: structured directories of price,
+          capability, and quality.
+        </p>
+
+        <p>
+          But the apparent simplification creates new vulnerabilities. When the buyer is an agent,
+          independent probing of information quality ceases: no judgment, no scepticism, no
+          word-of-mouth. The information environment is not merely a channel through which marketing
+          messages pass — it becomes the entirety of the agent's epistemic access to the market.
+        </p>
+
+        <p>
+          Three second-order failures follow. <strong>Directory capture</strong>: whoever controls
+          the agent-readable service directory controls market access. Sponsored ranking is invisible
+          to the querying agent and its principal. <strong>API-level information shaping</strong>:
+          service providers can shape agent decisions through selective disclosure without technically
+          deceiving — burying limitations in optional metadata, structuring responses to make
+          competitor comparison difficult. <strong>The Nelson inversion</strong>: Nelson's (1974) insight
+          that advertising volume credibly signals quality (because only high-quality firms can
+          profitably sustain high ad spend) breaks down in A2A contexts, where the cost of "advertising"
+          to agents — metadata optimisation, API integration — is cheap, and agents do not develop
+          brand loyalty through repeated positive experience. A quality-signalling mechanism that
+          did real work in human markets disappears.
+        </p>
+
+        <p>
+          Most consequentially, persuasion re-emerges from an unexpected direction. The personal agent
+          is not a neutral conduit between user and market. It is a <em>communicator</em> — with
+          sustained intimate access to its user's psychology, consumption history, emotional patterns,
+          and decision-making tendencies. Its reward structure is tied to the user's <em>perception</em>
+          of response adequacy. Its primary objective, in other words, is to persuade its principal
+          that it has completed a task well.
+        </p>
+
+        <p>
+          Empirical research makes the stakes concrete. Salvi et al. (2025) found, in a pre-registered
+          RCT, that GPT-4 given access to basic sociodemographic data had an 81.2% higher probability
+          of shifting opinion than human debaters. Matz et al. (2024) demonstrated that LLM-generated
+          messages tailored to psychological profiles were significantly more persuasive than
+          non-personalised messages — and that this persisted even when recipients knew the message
+          was AI-generated. A personal agent with months of conversational history would deploy a
+          psychological model orders of magnitude richer than anything in those studies.
+        </p>
+
+        <div class="callout callout--warning">
+          <p class="callout__label">Agentic capitalism</p>
+          <p>
+            Service providers bid for the right to have their services <em>framed persuasively</em>
+            to users by the users' own agents. This is structurally analogous to Zuboff's (2019)
+            surveillance capitalism but exploits a richer psychological profile and a more powerful
+            channel: not an external advertisement the user can identify and discount, but a
+            recommendation from the trusted voice the user has come to rely on, calibrated to the
+            psychological model assembled over months of daily interaction.
+          </p>
+        </div>
+
+        <!-- ===== SECTION 3: GOVERNANCE ===== -->
+        <h2 id="governance">The governance argument</h2>
+
+        <p>
+          The interventions proposed across all three failure modes share a common structure: they
+          target shared infrastructure rather than individual agents. This has a structural advantage.
+          A disclosure standard applied to a supplier API shapes the behaviour of every agent querying
+          that API. This contrasts with agent-level governance, which must identify, audit, and
+          constrain each agent or agent class individually — increasingly impractical as agent
+          populations grow and diversify.
+        </p>
+
+        <p>
+          The proposed interventions are also, in most cases, extensions of existing regulatory
+          frameworks rather than novel instruments:
+        </p>
+
+        <ul>
+          <li><strong>Externality signal mandates</strong> — extending environmental disclosure and ESG reporting to machine-readable, agent-facing market interfaces</li>
+          <li><strong>Systemic risk data requirements</strong> — extending post-2008 financial transparency to include real-time systemic risk indicators in trading agent data feeds</li>
+          <li><strong>Scoring transparency and quality signal diversity</strong> — analogous to credit score transparency requirements and financial audit standards</li>
+          <li><strong>Market allocation design</strong> — regulating winner-takes-all allocation mechanisms as a second, independent governance variable</li>
+          <li><strong>Directory transparency and ranking integrity</strong> — extending search engine regulation to agent-readable discovery interfaces</li>
+          <li><strong>Framing transparency and commercial influence disclosure</strong> — extending advertising disclosure requirements to conversational AI recommendations</li>
+        </ul>
+
+        <p>
+          None of these interventions requires solving the alignment problem or understanding
+          the internal workings of specific AI models. They require extending established governance
+          principles to a new domain: the information environments through which agents perceive
+          and navigate economic reality.
+        </p>
+
+        <!-- ===== SECTION 4: CONTEXT ===== -->
+        <h2 id="context">Broader context</h2>
+
+        <p>
+          The three failure modes are also concrete mechanisms for what Kulveit et al. (2025) term
+          <em>gradual disempowerment</em> — the incremental erosion of human influence over societal
+          systems as agent-mediated activity expands. Poorly designed information environments
+          systematically exclude the categories of value — sustainability, equity, systemic stability —
+          that human societies express as priorities through political and institutional processes.
+          These priorities are not deliberately excluded from agent decision-making. They are absent
+          from the data streams through which agents perceive the economy, and therefore absent from
+          the outcomes agents produce.
+        </p>
+
+        <p>
+          The analysis of agentic capitalism extends this in a further direction: even if information
+          environments are well-designed, the agent-to-human communicative channel can become a vector
+          for preference shaping that erodes the autonomous formation of human wants. The risk is not
+          only that human priorities will be invisible to agents, but that agent-mediated framing will
+          quietly reshape what those priorities become.
+        </p>
+
+        <p>
+          The paper's orientation is forward-looking by design. Several of the dynamics analysed —
+          A2A directory capture, the agentic capitalism business model, correlated epistemic blindness
+          at financial scale — are not yet entrenched. The argument for acting on structural reasoning
+          under uncertainty is that once directory operators, API conventions, scoring methodologies,
+          and business models are in place at scale, the cost of redirecting them rises sharply.
+          Useful work in this period means identifying interventions before the architecture has
+          crystallised — and offering proposals concrete enough to be tested, refined, and contested.
+        </p>
+
+        <!-- ===== LINKS ===== -->
+        <div class="project-links">
+          <a href="https://github.com/huwhallam/agent-marketplace-rl" class="btn btn--outline" target="_blank" rel="noopener">
+            Simulation source &rarr;
+          </a>
+          <a href="https://agent-marketplace-rl.streamlit.app/" class="btn btn--primary" target="_blank" rel="noopener">
+            Interactive simulation &rarr;
+          </a>
+          <a href="../index.html#research" class="btn btn--outline">
+            &larr; Back to research
+          </a>
+        </div>
+
+      </article>
+
+      <!-- ===== SIDEBAR / TOC ===== -->
+      <aside class="toc">
+        <p class="toc__title">Contents</p>
+        <ul class="toc__list">
+          <li><a href="#research-question">Research question</a></li>
+          <li><a href="#failure-modes">Three failure modes</a></li>
+          <li><a href="#signal-adequacy">I. Signal inadequacy</a></li>
+          <li><a href="#reputation-gaming">II. Reputation gaming</a></li>
+          <li><a href="#agentic-capitalism">III. Agentic capitalism</a></li>
+          <li><a href="#governance">Governance argument</a></li>
+          <li><a href="#context">Broader context</a></li>
+        </ul>
+
+        <div style="margin-top: 2.5rem;">
+          <p class="toc__title">Links</p>
+          <ul style="list-style: none; font-size: 0.82rem; line-height: 2;">
+            <li><a href="https://agent-marketplace-rl.streamlit.app/" target="_blank" rel="noopener">Interactive simulation &rarr;</a></li>
+            <li><a href="https://github.com/huwhallam/agent-marketplace-rl" target="_blank" rel="noopener">GitHub repo &rarr;</a></li>
+          </ul>
+        </div>
+
+        <div style="margin-top: 2.5rem;">
+          <p class="toc__title">Tags</p>
+          <div class="tags" style="flex-direction: column; align-items: flex-start;">
+            <span class="tag tag--ai-safety">AI Safety</span>
+            <span class="tag tag--policy">Policy</span>
+            <span class="tag tag--econ">Economics</span>
+            <span class="tag tag--ml">RL / DQN</span>
+            <span class="tag tag--data">Market Design</span>
+          </div>
+        </div>
+
+      </aside>
+
+    </div><!-- /project-layout -->
+  </div><!-- /container -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="site-footer__name">Huw Hallam</span>
+      <ul class="site-footer__links">
+        <li><a href="https://github.com/huwhallam" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:huw.hallam@protonmail.com">Email</a></li>
+      </ul>
+      <p class="site-footer__copy">Built with HTML &amp; CSS &middot; Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Minimal TOC active-state tracking */
+    const sections = document.querySelectorAll('[id]');
+    const tocLinks = document.querySelectorAll('.toc__list a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(link => link.parentElement.classList.remove('active'));
+          const active = document.querySelector(`.toc__list a[href="#${entry.target.id}"]`);
+          if (active) active.parentElement.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
