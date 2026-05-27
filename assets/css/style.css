@@ -347,10 +347,7 @@ em { font-style: italic; }
 }
 
 .tag--ai-safety { background: #fdfbe0; border-color: #d4c800; color: #2c4c5c; }
-.tag--policy    { background: #edf0f2; border-color: #b8bfc1; color: #2c4c5c; }
-.tag--ml        { background: #e8eef1; border-color: #6c8494; color: #2c4c5c; }
-.tag--econ      { background: #edf0f2; border-color: #b8bfc1; color: #6c8494; }
-.tag--data      { background: #fdfbe0; border-color: #d4c800; color: #2c4c5c; }
+.tag--data      { background: #e8eef1; border-color: #6c8494; color: #2c4c5c; }
 
 /* ===== FEATURED RESEARCH CARD ===== */
 .research-featured {
