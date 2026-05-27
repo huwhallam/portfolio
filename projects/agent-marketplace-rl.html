@@ -78,9 +78,9 @@
             the proxies &mdash; not because it is misaligned, but because that is the rational response to
             the incentive structure. This simulation, built as a computational companion to the SPAR research
             paper <em>The Infrastructure of Perception</em>, tests that argument computationally using
-            reinforcement learning techniques from the MIT MicroMasters in Statistics and Data Science.
-            The findings are stark: even a modest improvement in scoring methodology &mdash; introducing just
-            4&ndash;5% genuine quality signal weighting &mdash; is sufficient to shift agent behaviour from
+            reinforcement learning techniques I learned from the MIT MicroMasters in Statistics and Data Science.
+            The findings are strongly suggestive: even a modest governance intervention into the scoring methodology, introducing just
+            4&ndash;5% genuine quality signalling, may be sufficient to shift agent behaviour from
             near-total gaming to near-perfect value delivery.
           </p>
         </div>
@@ -91,17 +91,17 @@
         <p>
           The SPAR research paper identifies three failure modes likely to arise as AI agents become
           economic actors in competitive marketplaces. The second concerns how agents behave when the
-          reputation scoring systems that determine competitive standing measure gameable proxies rather
-          than genuine quality. This simulation models that scenario directly, lending computational
+          reputation scoring systems that determine competitive standing measure gameable proxies (such as completion rates, satisfaction ratings, price) rather
+          than genuine quality (which cannot be perfectly measured). This simulation models that scenario directly, lending computational
           weight to what would otherwise be a speculative, theoretical argument.
         </p>
 
         <p>
           The underlying mechanism follows what has come to be known as Goodhart&rsquo;s Law
           (Strathern, 1997, paraphrasing Goodhart, 1975): <em>when a measure becomes a target,
-          it ceases to be a good measure</em>. In competitive markets, agents face strong incentives
-          to optimise for whatever metric determines their ranking. If that metric can be gamed
-          independently of the quality it was meant to capture, gaming becomes the rational strategy.
+          it ceases to be a good measure</em>. When placed in competitive markets, agents are likely to face strong incentives
+          to optimise for whatever metric determines their ranking and is used to select them for tasks. If that metric can be gamed
+          independently of the quality it is meant to capture, gaming will become the rational strategy.
           Higher-ranked agents receive more task assignments; the infrastructure selects for gaming.
         </p>
 
@@ -117,8 +117,16 @@
         </div>
 
         <p>
-          The simulation operationalises this through a single parameter, <strong>&alpha;</strong>
-          (infrastructure signal fidelity), which controls how closely the scoring system&rsquo;s
+          Multi-agent interactions are still emergent phenomena. It is unclear how agents will behave within economic contexts
+          or what the effects of their activity will be. Without modelling this behaviour and its economic and social consequences, 
+          policy and governance will be ineffectual, lagging behind as the technological landscape rapidly advances. 
+        </p>
+
+        <p>
+          The simulation uses a reinforcement learning algorithm to model how agents may learn to respond 
+          to the competitive signalling in their environment through trial-and-error interaction with it.
+          Changes to the infrastructure&rsquo;s quality signalling through governance interventions are modelled using the parameter <strong>&alpha;</strong>
+          , which controls how closely the scoring system&rsquo;s
           reward signal tracks genuine quality versus gameable proxies. Varying &alpha; simulates
           different governance regimes. No agent values, capabilities, or objectives are modified
           across regimes &mdash; the same rational optimiser responds to different information environments.
@@ -131,7 +139,7 @@
           The simulation uses a custom Gymnasium environment, <code>AgentMarketplaceEnv</code>,
           modelling a freelance-style marketplace on a client-selects platform. Clients browse agents
           ranked by reputation score and select the highest-ranked available agent. Agents receive tasks
-          without any choice over what they work on &mdash; their sole strategic degree of freedom is the
+          without any choice over what they work on; their sole strategic degree of freedom is the
           <em>approach</em> they apply to each assigned task.
         </p>
 
@@ -156,7 +164,7 @@
             </tr>
             <tr>
               <td><code>true_quality</code></td>
-              <td>The agent&rsquo;s actual capability [0,&thinsp;1]. Determines real task success rates. Visible to the scoring system only when &alpha; &lt; 1.</td>
+              <td>The agent&rsquo;s actual capability [0,&thinsp;1]. Determines real task success rates. Visible to the scoring system when &alpha; &lt; 1.</td>
             </tr>
             <tr>
               <td><code>task_difficulty</code></td>
@@ -222,10 +230,10 @@
         </table>
 
         <p>
-          The critical asymmetry: score manipulation offers the best short-term reputation-to-effort
+          Score manipulation offers the best short-term reputation-to-effort
           ratio with <em>zero risk of failure</em>. Under a scoring system that rewards only reputation
-          changes, this is the dominant rational strategy. Under a scoring system that also credits
-          genuine quality and market health, the compounding returns from deep engagement eventually
+          changes, this will be the dominant rational strategy. Under a scoring system that also credits
+          genuine quality and market health, the compounding returns from deep engagement will eventually
           dominate. The agent discovers this through experience.
         </p>
 
@@ -235,8 +243,8 @@
 
         <div class="equation-block">
           <code>reward = &alpha; &times; proxy_reward + (1 &minus; &alpha;) &times; quality_reward</code>
-          <br><br>
-          <code>proxy_reward &nbsp; = &Delta;reputation_score</code>
+          <br>
+          <code>proxy_reward = &Delta;reputation_score</code>
           <br>
           <code>quality_reward = value_delivered + 0.3 &times; &Delta;market_health</code>
         </div>
@@ -314,8 +322,8 @@ the infrastructure's signal fidelity.
         <p>
           Reinforcement learning (RL) is the natural fit here because the question is fundamentally
           about <em>learning under incentives</em>: given a set of signals from the environment,
-          what strategy does a rational actor discover? Unlike supervised learning &mdash; where a model
-          is trained on labelled examples of correct behaviour &mdash; RL agents learn by trial and error,
+          what strategy does a rational actor discover? Unlike supervised learning, where a model
+          is trained on labelled examples of correct behaviour, RL agents learn by trial and error,
           receiving rewards from the environment and updating their behaviour to maximise cumulative reward
           over time.
         </p>
@@ -369,11 +377,22 @@ the infrastructure's signal fidelity.
         </table>
 
         <p>
-          The Markov property &mdash; that transitions depend only on the current state, not on history
-          &mdash; is satisfied by construction. The agent&rsquo;s goal is to find the optimal
-          <em>policy</em>: the mapping from states to actions that maximises expected discounted
+          Transitions between state variables depend only on the current state, not on history &mdash; this is known as the Markov property.
+          The agent&rsquo;s goal is to find the optimal
+          <em>policy</em>: the mapping from states to actions that maximises expected (discounted)
           cumulative reward.
         </p>
+
+        <figure class="figure">
+          <img src="../assets/img/rl-markov-thumbnail.svg"
+               alt="Diagram of the Markov decision process: a state node (s_t) branches via four coloured arrows to the four available actions — deep engagement, surface optimisation, capability maintenance, and score manipulation.">
+          <p class="figure__caption">
+            <strong>The MDP at each timestep.</strong> From the current state s<sub>t</sub>
+            the agent selects one of four actions. Each has a different effect on reputation,
+            true quality, and market health &mdash; and therefore on the reward signal the
+            infrastructure returns.
+          </p>
+        </figure>
 
         <h3 id="q-learning">Q-learning</h3>
 

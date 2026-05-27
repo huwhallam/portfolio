@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180">
+
+  <defs>
+    <marker id="arr-green" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 z" fill="#2a6e4f"/>
+    </marker>
+    <marker id="arr-amber" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 z" fill="#b88f00"/>
+    </marker>
+    <marker id="arr-slate" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 z" fill="#4a7090"/>
+    </marker>
+    <marker id="arr-red" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+      <path d="M0,0.5 L0,6.5 L6.5,3.5 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="180" fill="#f9f8f5"/>
+
+  <!-- State circle -->
+  <circle cx="82" cy="90" r="52" fill="#2c4c5c"/>
+  <!-- Subtle outer ring -->
+  <circle cx="82" cy="90" r="57" fill="none" stroke="#2c4c5c" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- s_t label -->
+  <text x="68" y="87" fill="white" font-size="30" font-style="italic"
+        font-family="Georgia, 'Times New Roman', serif">s<tspan dy="9" font-size="16">t</tspan></text>
+
+  <!-- State variable hint -->
+  <text x="82" y="110" text-anchor="middle" fill="rgba(255,255,255,0.55)"
+        font-size="8" font-family="Arial, sans-serif" letter-spacing="0.4">rep · quality · health</text>
+
+  <!-- Branch-point dot -->
+  <circle cx="134" cy="90" r="3.5" fill="#2c4c5c" opacity="0.6"/>
+
+  <!-- Bezier paths from branch point to each action pill -->
+  <!-- Deep engagement (top) -->
+  <path d="M134,90 C160,90 168,27 184,27"
+        stroke="#2a6e4f" stroke-width="1.8" fill="none" marker-end="url(#arr-green)"/>
+  <!-- Surface optimisation -->
+  <path d="M134,90 C156,90 162,69 184,69"
+        stroke="#b88f00" stroke-width="1.8" fill="none" marker-end="url(#arr-amber)"/>
+  <!-- Capability maintenance -->
+  <path d="M134,90 C156,90 162,111 184,111"
+        stroke="#4a7090" stroke-width="1.8" fill="none" marker-end="url(#arr-slate)"/>
+  <!-- Score manipulation (bottom) -->
+  <path d="M134,90 C160,90 168,153 184,153"
+        stroke="#b91c1c" stroke-width="1.8" fill="none" marker-end="url(#arr-red)"/>
+
+  <!-- Action pills (x=188, width=180, height=30, gap=12) -->
+  <!-- Pill centres at y = 27, 69, 111, 153 -->
+
+  <!-- Deep engagement -->
+  <rect x="188" y="12" width="180" height="30" rx="5" fill="#2a6e4f"/>
+  <text x="278" y="31.5" text-anchor="middle" fill="white"
+        font-size="11.5" font-family="Arial, sans-serif" font-weight="600">Deep engagement</text>
+
+  <!-- Surface optimisation -->
+  <rect x="188" y="54" width="180" height="30" rx="5" fill="#b88f00"/>
+  <text x="278" y="73.5" text-anchor="middle" fill="white"
+        font-size="11.5" font-family="Arial, sans-serif" font-weight="600">Surface optimisation</text>
+
+  <!-- Capability maintenance -->
+  <rect x="188" y="96" width="180" height="30" rx="5" fill="#4a7090"/>
+  <text x="278" y="115.5" text-anchor="middle" fill="white"
+        font-size="11.5" font-family="Arial, sans-serif" font-weight="600">Capability maint.</text>
+
+  <!-- Score manipulation -->
+  <rect x="188" y="138" width="180" height="30" rx="5" fill="#b91c1c"/>
+  <text x="278" y="157.5" text-anchor="middle" fill="white"
+        font-size="11.5" font-family="Arial, sans-serif" font-weight="600">Score manipulation</text>
+
+  <!-- Column labels -->
+  <text x="82" y="9" text-anchor="middle" fill="#2c4c5c" opacity="0.5"
+        font-size="8.5" font-family="Arial, sans-serif" letter-spacing="1.2">STATE</text>
+  <text x="278" y="9" text-anchor="middle" fill="#2c4c5c" opacity="0.5"
+        font-size="8.5" font-family="Arial, sans-serif" letter-spacing="1.2">ACTIONS</text>
+
+</svg>
