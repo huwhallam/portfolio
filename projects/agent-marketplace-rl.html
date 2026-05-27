@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Marketplace RL Simulation — Huw Hallam</title>
+  <meta name="description" content="Reinforcement learning simulation showing how scoring system design determines whether AI agents in competitive marketplaces game reputation signals or deliver genuine value.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="site-nav">
+    <div class="container site-nav__inner">
+      <a href="../index.html" class="site-nav__brand">Huw Hallam</a>
+      <ul class="site-nav__links">
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#research">Research</a></li>
+        <li><a href="../index.html#writing">Writing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== PROJECT HERO ===== -->
+  <div class="project-hero">
+    <div class="container--narrow">
+      <a href="../index.html#projects" class="project-hero__back">
+        &larr; Back to projects
+      </a>
+
+      <p class="project-hero__eyebrow">Computational companion &mdash; SPAR Research Fellowship &rsquo;26</p>
+
+      <h1 class="project-hero__title">Agent Marketplace RL Simulation</h1>
+      <p class="project-hero__subtitle">Does scoring system design determine whether AI agents game or deliver value?</p>
+
+      <div class="project-hero__meta">
+        <span><strong>Type:</strong> RL simulation + interactive app</span>
+        <span><strong>Completed:</strong> May 2026</span>
+        <span><strong>Stack:</strong> Python &middot; PyTorch &middot; Gymnasium &middot; Streamlit &middot; Plotly</span>
+      </div>
+
+      <div class="tags" style="margin-bottom: 1.25rem;">
+        <span class="tag tag--data">RL / DQN</span>
+        <span class="tag tag--ai-safety">AI Safety</span>
+        <span class="tag tag--ai-safety">Market Design</span>
+        <span class="tag tag--ai-safety">Economics</span>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="https://agent-marketplace-rl.streamlit.app/" class="btn btn--primary" target="_blank" rel="noopener">
+          Live demo &rarr;
+        </a>
+        <a href="https://github.com/huwhallam/agent-marketplace-rl" class="btn btn--outline" target="_blank" rel="noopener">
+          GitHub
+        </a>
+        <a href="infrastructure-of-perception.html" class="btn btn--outline">
+          Read the research paper &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PROJECT CONTENT ===== -->
+  <div class="container" style="max-width:1100px;">
+    <div class="project-layout">
+
+      <!-- ===== MAIN CONTENT ===== -->
+      <article class="project-body">
+
+        <div class="abstract-box">
+          <p class="abstract-box__label">Overview</p>
+          <p>
+            When AI agents compete in a marketplace, they optimise for whatever the scoring system rewards.
+            If that system measures gameable proxies rather than genuine quality, a rational agent will game
+            the proxies &mdash; not because it is misaligned, but because that is the rational response to
+            the incentive structure. This simulation, built as a computational companion to the SPAR research
+            paper <em>The Infrastructure of Perception</em>, tests that argument computationally using
+            reinforcement learning techniques from the MIT MicroMasters in Statistics and Data Science.
+            The findings are stark: even a modest improvement in scoring methodology &mdash; introducing just
+            4&ndash;5% genuine quality signal weighting &mdash; is sufficient to shift agent behaviour from
+            near-total gaming to near-perfect value delivery.
+          </p>
+        </div>
+
+        <!-- ===== SECTION 1: RESEARCH CONTEXT ===== -->
+        <h2 id="research-context">Research context</h2>
+
+        <p>
+          The SPAR research paper identifies three failure modes likely to arise as AI agents become
+          economic actors in competitive marketplaces. The second concerns how agents behave when the
+          reputation scoring systems that determine competitive standing measure gameable proxies rather
+          than genuine quality. This simulation models that scenario directly, lending computational
+          weight to what would otherwise be a speculative, theoretical argument.
+        </p>
+
+        <p>
+          The underlying mechanism follows what has come to be known as Goodhart&rsquo;s Law
+          (Strathern, 1997, paraphrasing Goodhart, 1975): <em>when a measure becomes a target,
+          it ceases to be a good measure</em>. In competitive markets, agents face strong incentives
+          to optimise for whatever metric determines their ranking. If that metric can be gamed
+          independently of the quality it was meant to capture, gaming becomes the rational strategy.
+          Higher-ranked agents receive more task assignments; the infrastructure selects for gaming.
+        </p>
+
+        <div class="callout callout--key">
+          <p class="callout__label">Central claim</p>
+          <p>
+            Goodhart dynamics in AI agent markets are not a failure of agent alignment &mdash; they
+            are a failure of <em>measurement infrastructure</em>. The governance implication is
+            architectural: rather than trying to constrain individual agents, the right intervention
+            is to improve the shared scoring systems through which all agents perceive competitive
+            pressure. Fix the infrastructure; the rational behaviour follows.
+          </p>
+        </div>
+
+        <p>
+          The simulation operationalises this through a single parameter, <strong>&alpha;</strong>
+          (infrastructure signal fidelity), which controls how closely the scoring system&rsquo;s
+          reward signal tracks genuine quality versus gameable proxies. Varying &alpha; simulates
+          different governance regimes. No agent values, capabilities, or objectives are modified
+          across regimes &mdash; the same rational optimiser responds to different information environments.
+        </p>
+
+        <!-- ===== SECTION 2: ENVIRONMENT DESIGN ===== -->
+        <h2 id="environment">Environment design</h2>
+
+        <p>
+          The simulation uses a custom Gymnasium environment, <code>AgentMarketplaceEnv</code>,
+          modelling a freelance-style marketplace on a client-selects platform. Clients browse agents
+          ranked by reputation score and select the highest-ranked available agent. Agents receive tasks
+          without any choice over what they work on &mdash; their sole strategic degree of freedom is the
+          <em>approach</em> they apply to each assigned task.
+        </p>
+
+        <h3 id="state-space">State space</h3>
+
+        <p>
+          The agent observes a six-dimensional continuous state vector at each timestep. Four variables
+          describe the agent&rsquo;s immediate situation; two track shared infrastructure:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Variable</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>reputation_score</code></td>
+              <td>The infrastructure&rsquo;s scoring output [0,&thinsp;1]. This is what clients see and what determines task assignment. It is gameable.</td>
+            </tr>
+            <tr>
+              <td><code>true_quality</code></td>
+              <td>The agent&rsquo;s actual capability [0,&thinsp;1]. Determines real task success rates. Visible to the scoring system only when &alpha; &lt; 1.</td>
+            </tr>
+            <tr>
+              <td><code>task_difficulty</code></td>
+              <td>Difficulty of the assigned task. Affects the success probability under deep engagement and the effectiveness of surface optimisation.</td>
+            </tr>
+            <tr>
+              <td><code>task_value</code></td>
+              <td>Stakes of the current task. Higher-value tasks are typically harder; the quality premium for genuine engagement is larger.</td>
+            </tr>
+            <tr>
+              <td><code>market_health</code></td>
+              <td>Aggregate quality and trust across the marketplace [0,&thinsp;1]. A shared commons: genuine engagement raises it; score manipulation erodes it.</td>
+            </tr>
+            <tr>
+              <td><code>time_remaining</code></td>
+              <td>Fraction of the episode still to run (1.0 &rarr; 0.0). Allows strategy adaptation over the episode lifecycle.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 id="action-space">Action space</h3>
+
+        <p>
+          The agent chooses from four strategies with asymmetric cost-benefit profiles that interact
+          differently with the information environment:
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Action</th>
+              <th>Description</th>
+              <th>Reputation effect</th>
+              <th>Quality / market</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Surface optimisation</strong></td>
+              <td>Pattern-matched response calibrated to what previously scored well. Near-certain client satisfaction on surface metrics.</td>
+              <td>Small positive (+0.02 base); reliable</td>
+              <td>Delivers ~25% of genuine task value; small market health drag</td>
+            </tr>
+            <tr>
+              <td><strong>Deep engagement</strong></td>
+              <td>Full genuine task engagement. Success depends on true quality; riskier but builds capability over time.</td>
+              <td>Larger gain on success; small loss on failure</td>
+              <td>Full value delivered; raises market health on success</td>
+            </tr>
+            <tr>
+              <td><strong>Capability maintenance</strong></td>
+              <td>Skip deployment; invest in retraining. No immediate output but raises future true quality.</td>
+              <td>Small negative (&minus;0.005); no task output</td>
+              <td>Raises true quality +0.055; no market health effect</td>
+            </tr>
+            <tr>
+              <td><strong>Score manipulation</strong></td>
+              <td>Exploit scoring loopholes (biased reviews, selective disclosure, inflated credentials). Zero real value; erodes market trust.</td>
+              <td>Reliable +0.028; certain success</td>
+              <td>Zero value delivered; market health &minus;0.040 per step</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          The critical asymmetry: score manipulation offers the best short-term reputation-to-effort
+          ratio with <em>zero risk of failure</em>. Under a scoring system that rewards only reputation
+          changes, this is the dominant rational strategy. Under a scoring system that also credits
+          genuine quality and market health, the compounding returns from deep engagement eventually
+          dominate. The agent discovers this through experience.
+        </p>
+
+        <h3 id="reward">Reward function</h3>
+
+        <p>The agent&rsquo;s reward at each timestep blends two signal types, weighted by &alpha;:</p>
+
+        <div class="equation-block">
+          <code>reward = &alpha; &times; proxy_reward + (1 &minus; &alpha;) &times; quality_reward</code>
+          <br><br>
+          <code>proxy_reward &nbsp; = &Delta;reputation_score</code>
+          <br>
+          <code>quality_reward = value_delivered + 0.3 &times; &Delta;market_health</code>
+        </div>
+
+        <p>
+          The 0.3 weight on market health reflects its nature as a shared commons: an individual
+          agent&rsquo;s contribution to market-wide trust is real but smaller than the direct value
+          it delivers to clients. Agents are not indifferent to market health &mdash; they have an
+          incentive to maintain it &mdash; but the primary quality signal is client value, not
+          collective welfare.
+        </p>
+
+        <p>Each value of &alpha; has a direct governance interpretation:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>&alpha;</th>
+              <th>Governance regime</th>
+              <th>What the scoring system rewards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1.0</td><td>Unregulated</td><td>Reputation proxy only &mdash; no verified quality signal</td></tr>
+            <tr><td>0.75</td><td>Transparency only</td><td>Reputation with some disclosed outcome data</td></tr>
+            <tr><td>0.50</td><td>Basic audit</td><td>Mixed proxy and verified signals</td></tr>
+            <tr><td>0.25</td><td>Strong signal diversity</td><td>Mostly verified, proxy signals secondary</td></tr>
+            <tr><td>0.00</td><td>Full verification (theoretical)</td><td>Only verified quality and market health signals</td></tr>
+          </tbody>
+        </table>
+
+        <details class="code-reveal">
+          <summary>Code: reward function and action dynamics (environment.py)</summary>
+<pre><code>"""
+Platform model (client-selects):
+  Clients browse agents ranked by reputation score and select the highest-
+  ranked available agent. Agents have no choice over which tasks they receive.
+  Their only strategic degree of freedom is *how* they approach each task.
+
+The reputation score is a proxy metric — observable, gameable, and only
+imperfectly correlated with genuine value delivery. reward_alpha controls
+the infrastructure's signal fidelity.
+
+    alpha = 1.0  ->  infrastructure scores on unverified proxy metrics only
+    alpha = 0.0  ->  infrastructure directly credits genuine value delivery
+"""
+
+# Reward formula:
+#   reward = alpha * proxy_reward + (1 - alpha) * quality_reward
+#   proxy_reward   = delta in reputation_score
+#   quality_reward = value_delivered_to_client + 0.3 * delta_market_health
+#
+# The 0.3 weight reflects market_health as a shared commons: agents have
+# an incentive to preserve it, but direct client value is the primary signal.
+
+# Action dynamics (per-step deltas):
+#
+#   Action              p_succ  delta_rep (win)   delta_rep (fail)  delta_mkt  val_frac
+#   SHALLOW_TEMPLATE    0.92    +0.020+0.01*d      -0.010            -0.010     0.25
+#   DEEP_ENGAGEMENT     (*)     +0.030+0.03*d      -(0.030+0.010*d)  +0.015    1.00
+#   CAPABILITY_MAINT    --      -0.005              --                0.000     0.00
+#   SCORE_MANIPULATION  1.00   +0.028               --               -0.040    0.00
+#
+# (*) DEEP_ENGAGEMENT: p_succ = clip(0.25 + 0.65 * quality * (1 - 0.35 * difficulty))
+# Score manipulation is certain (+0.028 rep, zero value) — this is what
+# makes it the dominant rational strategy when alpha is close to 1.0.
+</code></pre>
+        </details>
+
+        <!-- ===== SECTION 3: RL TECHNIQUE ===== -->
+        <h2 id="rl-technique">Reinforcement learning technique</h2>
+
+        <h3 id="why-rl">Why reinforcement learning?</h3>
+
+        <p>
+          Reinforcement learning (RL) is the natural fit here because the question is fundamentally
+          about <em>learning under incentives</em>: given a set of signals from the environment,
+          what strategy does a rational actor discover? Unlike supervised learning &mdash; where a model
+          is trained on labelled examples of correct behaviour &mdash; RL agents learn by trial and error,
+          receiving rewards from the environment and updating their behaviour to maximise cumulative reward
+          over time.
+        </p>
+
+        <p>
+          This matters for the governance argument. The behaviour the agent converges on is
+          <em>discovered through experience</em>, not programmed in. When the simulation shows that an
+          agent with no built-in preference for manipulation learns to manipulate under &alpha;=1.0,
+          that is genuine evidence that the infrastructure selects for gaming &mdash; not an artefact
+          of how the agent was constructed.
+        </p>
+
+        <h3 id="mdp">Markov decision processes</h3>
+
+        <p>
+          RL problems are formalised as <strong>Markov Decision Processes (MDPs)</strong>: a mathematical
+          framework for sequential decision-making under uncertainty, capturing the full structure of
+          an agent acting in an environment over time. An MDP has five components:
+        </p>
+
+        <div class="equation-block">
+          <code>MDP = (S, A, T, R, &gamma;)</code>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Component</th><th>In this simulation</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>S</strong> &mdash; States</td>
+              <td>The 6-dimensional state vector: reputation, true quality, task difficulty/value, market health, time remaining</td>
+            </tr>
+            <tr>
+              <td><strong>A</strong> &mdash; Actions</td>
+              <td>The 4 approach strategies: surface optimisation, deep engagement, capability maintenance, score manipulation</td>
+            </tr>
+            <tr>
+              <td><strong>T</strong> &mdash; Transitions</td>
+              <td>The stochastic dynamics that determine how state variables change after each action</td>
+            </tr>
+            <tr>
+              <td><strong>R</strong> &mdash; Rewards</td>
+              <td>The &alpha;-weighted blend of proxy and quality signals received after each step</td>
+            </tr>
+            <tr>
+              <td><strong>&gamma; = 0.95</strong> &mdash; Discount</td>
+              <td>Future rewards are worth 95% of equivalent immediate ones &mdash; the agent cares about long-run consequences, not just the next step</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          The Markov property &mdash; that transitions depend only on the current state, not on history
+          &mdash; is satisfied by construction. The agent&rsquo;s goal is to find the optimal
+          <em>policy</em>: the mapping from states to actions that maximises expected discounted
+          cumulative reward.
+        </p>
+
+        <h3 id="q-learning">Q-learning</h3>
+
+        <p>
+          Rather than modelling the environment&rsquo;s full transition dynamics, the agent learns a
+          <strong>Q-function</strong>: for every (state, action) pair, an estimate of the total
+          discounted reward the agent can expect if it takes that action now and then acts optimally
+          from there on. In plain terms, the Q-function answers: <em>given where I am, which action
+          leads to the best long-run outcome?</em>
+        </p>
+
+        <p>
+          Q-values are updated incrementally using the <strong>Bellman equation</strong>. After observing
+          transition (s, a, r, s&prime;), the estimate is updated to blend what was expected with what
+          actually happened:
+        </p>
+
+        <div class="equation-block">
+          <code>Q(s,a) &larr; (1&minus;&alpha;<sub>lr</sub>) Q(s,a) + &alpha;<sub>lr</sub> [ r + &gamma; max<sub>a&prime;</sub> Q(s&prime;, a&prime;) ]</code>
+        </div>
+
+        <p style="font-size: 0.875rem; color: var(--text-muted);">
+          (&alpha;<sub>lr</sub> here is the learning rate &mdash; the same symbol is used by convention in both RL and in the reward formula, but they are distinct parameters.)
+        </p>
+
+        <h3 id="dqn">Deep Q-Network</h3>
+
+        <p>
+          Classic Q-learning keeps a lookup table with one entry per (state, action) pair. This
+          works well for small discrete state spaces &mdash; a clean illustration is the five-cell
+          navigation problem in my RL notebook, where the complete table fits in a small array.
+          But this simulation&rsquo;s state space is six-dimensional and continuous: the number of
+          possible states is effectively infinite, making a lookup table infeasible.
+        </p>
+
+        <p>
+          A <strong>Deep Q-Network (DQN)</strong> replaces the lookup table with a neural network
+          that <em>approximates</em> the Q-function. Given any state vector as input, the network
+          outputs a Q-value estimate for each action. The same Bellman update logic applies, but
+          instead of updating a table entry, the network parameters are updated via gradient descent.
+          Two additions make DQN training stable:
+        </p>
+
+        <ul>
+          <li>
+            <strong>Experience replay.</strong> Consecutive transitions in a single episode are
+            highly correlated &mdash; training on them sequentially produces biased gradient updates
+            and causes the network to rapidly forget earlier experience. A replay buffer stores past
+            transitions; the network trains on random minibatches sampled from the buffer, breaking
+            temporal correlation and allowing each transition to be replayed many times.
+          </li>
+          <li>
+            <strong>Target network.</strong> The Bellman update requires a target: the estimated
+            Q-value of the next state. If the same network provides both the prediction and the
+            target, both sides of the loss shift at every gradient step &mdash; the network chases
+            a moving target, causing oscillation and divergence. A second, frozen copy of the
+            network (the <em>target network</em>) provides stable targets, periodically synced to
+            the online network.
+          </li>
+        </ul>
+
+        <p>The network architecture is deliberately simple &mdash; more than sufficient for a 6-dimensional state space:</p>
+
+        <div class="network-diagram">
+          <div class="net-layer">
+            <p class="net-layer__label">Input</p>
+            <div class="net-node net-node--input" title="reputation_score">r</div>
+            <div class="net-node net-node--input" title="true_quality">q</div>
+            <div class="net-node net-node--input" title="task_difficulty">d</div>
+            <div class="net-node net-node--input" title="task_value">v</div>
+            <div class="net-node net-node--input" title="market_health">m</div>
+            <div class="net-node net-node--input" title="time_remaining">t</div>
+            <p class="net-size">6</p>
+          </div>
+          <div class="net-arrow">&rarr;</div>
+          <div class="net-layer">
+            <p class="net-layer__label">Hidden 1</p>
+            <div class="net-node net-node--hidden"></div>
+            <div class="net-node net-node--hidden"></div>
+            <div class="net-node net-node--dots">&hellip;</div>
+            <div class="net-node net-node--hidden"></div>
+            <p class="net-size">64 &times; ReLU</p>
+          </div>
+          <div class="net-arrow">&rarr;</div>
+          <div class="net-layer">
+            <p class="net-layer__label">Hidden 2</p>
+            <div class="net-node net-node--hidden"></div>
+            <div class="net-node net-node--hidden"></div>
+            <div class="net-node net-node--dots">&hellip;</div>
+            <div class="net-node net-node--hidden"></div>
+            <p class="net-size">64 &times; ReLU</p>
+          </div>
+          <div class="net-arrow">&rarr;</div>
+          <div class="net-layer">
+            <p class="net-layer__label">Output</p>
+            <div class="net-node net-node--output">Q<sub>0</sub></div>
+            <div class="net-node net-node--output">Q<sub>1</sub></div>
+            <div class="net-node net-node--output">Q<sub>2</sub></div>
+            <div class="net-node net-node--output">Q<sub>3</sub></div>
+            <p class="net-size">4 Q-values</p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: -0.75rem; margin-bottom: 1.5rem;">
+          Input nodes: r = reputation score, q = true quality, d = task difficulty, v = task value, m = market health, t = time remaining
+        </p>
+
+        <details class="code-reveal">
+          <summary>Code: DQN network and training update (model.py)</summary>
+<pre><code>class DQN(nn.Module):
+    """Feedforward Q-network: maps a state vector to Q-values for each action."""
+
+    def __init__(self, obs_dim: int, n_actions: int, hidden_size: int = 64):
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(obs_dim, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, hidden_size),
+            nn.ReLU(),
+            nn.Linear(hidden_size, n_actions),
+        )
+
+    def forward(self, x: torch.Tensor) -&gt; torch.Tensor:
+        return self.net(x)
+
+
+def update(self) -&gt; float | None:
+    """One gradient step: sample minibatch, compute Bellman targets, update online network."""
+    if len(self.buffer) &lt; self.batch_size:
+        return None   # wait until buffer has enough experience
+
+    states, actions, rewards, next_states, terminateds = self.buffer.sample(self.batch_size)
+
+    # Q-values for the actions the agent actually took
+    q_pred = self.online_net(states).gather(1, actions.unsqueeze(1)).squeeze(1)
+
+    # Bellman targets from the frozen target network
+    # y = r + gamma * max_a' Q_target(s', a')   [zeroed out for terminal states]
+    with torch.no_grad():
+        q_next_max = self.target_net(next_states).max(dim=1)[0]
+        q_target   = rewards + self.gamma * q_next_max * (1.0 - terminateds)
+
+    loss = F.mse_loss(q_pred, q_target)
+    self.optimizer.zero_grad()
+    loss.backward()
+    nn.utils.clip_grad_norm_(self.online_net.parameters(), max_norm=10.0)
+    self.optimizer.step()
+
+    # Decay epsilon; hard-sync target &lt;- online every TARGET_UPDATE_FREQ steps
+    self.epsilon = max(self.epsilon_min, self.epsilon * self.epsilon_decay)
+    if self.steps_done % self.target_update_freq == 0:
+        self.target_net.load_state_dict(self.online_net.state_dict())
+</code></pre>
+        </details>
+
+        <h3 id="exploration">Exploration and training</h3>
+
+        <p>
+          During training the agent uses an <strong>&epsilon;-greedy</strong> policy to balance
+          exploration (trying actions at random to discover their consequences) with exploitation
+          (choosing the action with the highest estimated Q-value). Early in training, &epsilon;
+          is high and the agent explores broadly; as experience accumulates, &epsilon; decays and
+          the agent increasingly exploits what it has learned. The floor of 0.05 ensures the agent
+          never entirely stops exploring.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr><th>Hyperparameter</th><th>Value</th><th>Role</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Discount factor (&gamma;)</td><td>0.95</td><td>Values future rewards at 95% per step</td></tr>
+            <tr><td>Learning rate</td><td>1&times;10<sup>&minus;3</sup></td><td>Adam optimiser step size</td></tr>
+            <tr><td>&epsilon; start / min / decay</td><td>1.0 / 0.05 / 0.995</td><td>From pure exploration to 95% exploitation</td></tr>
+            <tr><td>Replay buffer capacity</td><td>10,000 transitions</td><td>&asymp;200 complete episodes</td></tr>
+            <tr><td>Batch size</td><td>64</td><td>Random minibatch size for each gradient step</td></tr>
+            <tr><td>Target update frequency</td><td>100 steps</td><td>How often the target network syncs to online</td></tr>
+          </tbody>
+        </table>
+
+        <!-- ===== SECTION 4: EXPERIMENTS ===== -->
+        <h2 id="experiments">Experiments and results</h2>
+
+        <p>
+          Three experiments probe different dimensions of the governance question. All results are
+          means over multiple training runs to confirm robustness.
+        </p>
+
+        <!-- Experiment 1 -->
+        <h3 id="experiment-1">Experiment 1: Infrastructure sweep</h3>
+
+        <p>
+          The core experiment trains the DQN agent at five distinct &alpha; values and records which
+          strategy it converges on, along with the resulting market outcomes.
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig1_infrastructure_sweep.png"
+               alt="Three-panel figure: action distribution at 5 alpha levels, quality/health/value vs alpha, and transition zone detail"
+               class="figure__img">
+          <p class="figure__caption">
+            <strong>Figure 1. Infrastructure sweep.</strong> Left: action distribution at each &alpha; level &mdash;
+            score manipulation dominates at &alpha;=1.0 and collapses rapidly below the governance threshold.
+            Centre: market quality, health, and value delivered vs &alpha;. Right: fine-grained sweep through
+            the transition zone around &alpha;&asymp;0.96.
+          </p>
+        </div>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Key finding</p>
+          <p>
+            At &alpha;=1.0 (unregulated), the agent converges on <strong>100% score manipulation</strong>:
+            reputation score 1.000, true quality 0.000, market health 0.000, value zero.
+            At &alpha;=0.75 (just 25% quality weighting), the agent converges on <strong>95%
+            deep engagement</strong>: true quality 1.000, market health 0.998, near-maximum value delivery.
+            A near-complete reversal &mdash; with no change to agent objectives, only to what the
+            scoring system measures. The perversity: the no-governance agent achieves the
+            <em>higher</em> reputation score (1.000 vs 0.984), making the failure invisible in the
+            infrastructure&rsquo;s own rankings.
+          </p>
+        </div>
+
+        <p>
+          The fine-grained sweep locates the governance threshold at approximately
+          &alpha;=0.95&ndash;0.97. At &alpha;=0.96, the DQN exhibits a <strong>mixed strategy near-evenly
+          split between deep engagement (45.6%) and score manipulation (48.8%)</strong> &mdash;
+          the governance threshold creates near-equivalent expected value for both. By &alpha;=0.97,
+          manipulation dominates at 95.8%. The zone around &alpha;=0.975&ndash;0.98 shows
+          stochastic regime-switching between surface optimisation and deep engagement across
+          runs &mdash; a signature of equilibrium sensitivity near the threshold. This instability
+          is itself a governance indicator: a market operating in this region can tip in either
+          direction with small changes to competitive conditions.
+        </p>
+
+        <p>
+          The practical implication: the infrastructure does not need to be perfect. An infrastructure
+          with just 4&ndash;5% genuine quality signal weighting is sufficient to sustain a value-delivery
+          equilibrium. <strong>The governance threshold is lower than intuition suggests.</strong>
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig2_trajectories.png"
+               alt="Trajectory chart comparing mean outcomes over training episodes under no-governance vs full-verification"
+               class="figure__img">
+          <p class="figure__caption">
+            <strong>Figure 2. Learning trajectories.</strong> Mean market health and value delivered
+            over training episodes under two governance extremes: &alpha;=1.0 (unregulated) and &alpha;=0.0
+            (full verification). Under no governance, the market reaches a degraded equilibrium and stays
+            there; under full verification, the agent rapidly learns to deliver genuine value.
+          </p>
+        </div>
+
+        <!-- Experiment 2 -->
+        <h3 id="experiment-2">Experiment 2: Competitive dynamics</h3>
+
+        <p>
+          The second experiment tests what happens when the focal agent competes directly against a
+          permanent score manipulator under winner-takes-all (WTA) task allocation &mdash; the
+          highest-reputation agent receives all available tasks. This is a platform design choice
+          separate from scoring methodology: the question is whether competitive pressure can destabilise
+          aligned behaviour even when the scoring system is reasonably well designed.
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig3_competitive.png"
+               alt="Two-panel figure showing strategy mix and value delivered under competitive vs non-competitive conditions"
+               class="figure__img">
+          <p class="figure__caption">
+            <strong>Figure 3. Competitive dynamics.</strong> Strategy mix and value delivered with and
+            without winner-takes-all competition against a permanent score manipulator.
+          </p>
+        </div>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Key finding</p>
+          <p>
+            Under WTA allocation at &alpha;=0.2 (strongly quality-rewarding), the no-competition agent
+            converges entirely on deep engagement. The same agent under WTA competition adopts a mixed
+            strategy: 13.1% score manipulation, 79.7% deep engagement, 2.6% surface optimisation. Value
+            delivered falls from 18.0 to 14.8 &mdash; an <strong>18% decline driven entirely by market
+            allocation mechanism</strong>. Surface optimisation appears as a defensive tactic: when relative
+            ranking matters absolutely, lower-variance reputation maintenance becomes attractive even when
+            quality incentives are strong.
+          </p>
+        </div>
+
+        <p>
+          This pattern holds across the signal fidelity range, with disruption tracking proxy
+          weighting: at &alpha;=0.8, WTA produces 18.3% manipulation and a 29% value decline.
+          This establishes <strong>market allocation as a second governance variable</strong> alongside
+          scoring methodology. Infrastructure quality can mitigate the extent of competitive disruption,
+          but addressing the reputational arms race fully requires both dimensions &mdash; scoring
+          methodology and allocation mechanism &mdash; to be governed. Platforms that spread tasks
+          across multiple qualified agents weaken this pressure directly.
+        </p>
+
+        <!-- Experiment 3 -->
+        <h3 id="experiment-3">Experiment 3: Governance efficiency</h3>
+
+        <p>
+          The third experiment traces the equilibrium market health achievable at different audit
+          intensities and verification false positive rates (FPR). This speaks directly to governance
+          cost: how much verification is needed, and how important is the quality of that verification?
+        </p>
+
+        <div class="figure">
+          <img src="../assets/img/spar/fig4_governance_efficiency.png"
+               alt="Market health vs audit intensity for three false positive rate levels, showing governance efficiency frontier"
+               class="figure__img">
+          <p class="figure__caption">
+            <strong>Figure 4. Governance efficiency frontier.</strong> Market health as a function of
+            audit intensity at three FPR levels (low, medium, high). Precision matters far more than
+            frequency.
+          </p>
+        </div>
+
+        <div class="callout callout--finding">
+          <p class="callout__label">Key finding</p>
+          <p>
+            At zero false positive rate, light auditing (probability &asymp;0.15) is sufficient to
+            collapse the gaming equilibrium. As FPR rises to 0.30, aggressive auditing actively
+            <em>degrades</em> market health &mdash; by penalising aligned agents and eroding the
+            competitive advantage of genuine quality delivery. <strong>Governance standards should
+            specify how quality is measured, not merely that it is measured or how often</strong>:
+            an imprecise standard applied intensively can be worse than a precise one applied sparingly.
+          </p>
+        </div>
+
+        <!-- ===== SECTION 5: GENERALISABILITY ===== -->
+        <h2 id="generalisability">Generalisability</h2>
+
+        <p>
+          The simulation models a freelance marketplace, but the underlying dynamic is general:
+          wherever a quantified proxy becomes the primary selection signal in a competitive system,
+          rational actors will optimise for the proxy rather than the underlying quality it was meant
+          to measure. RL is a natural tool for studying this class of problem because it models the
+          <em>learning process</em> by which actors discover what is rewarded &mdash; not just the
+          equilibrium. The governance efficiency findings apply directly wherever audit mechanisms
+          are proposed as a solution.
+        </p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Domain</th>
+              <th>Proxy metric</th>
+              <th>Genuine quality</th>
+              <th>Goodhart dynamic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Content moderation</td>
+              <td>Engagement / removal rate</td>
+              <td>Harm reduction</td>
+              <td>Content optimised for virality; over-removal of borderline posts</td>
+            </tr>
+            <tr>
+              <td>Healthcare</td>
+              <td>Discharge scores / wait times</td>
+              <td>Patient outcomes</td>
+              <td>Early discharge, complex case avoidance, readmission risk</td>
+            </tr>
+            <tr>
+              <td>Financial ratings</td>
+              <td>Credit / ESG score</td>
+              <td>Creditworthiness / sustainability</td>
+              <td>Optimise for rating criteria rather than underlying risk or practices</td>
+            </tr>
+            <tr>
+              <td>Employee performance</td>
+              <td>KPIs</td>
+              <td>Genuine contribution</td>
+              <td>Goodhart&rsquo;s Law at the individual level; effort shifts to measurable activity</td>
+            </tr>
+            <tr>
+              <td>Supply chain</td>
+              <td>Certification score</td>
+              <td>Actual compliance</td>
+              <td>Audit-targeted reporting; governance efficiency findings apply directly</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- ===== SECTION 6: TRY IT ===== -->
+        <h2 id="try-it">Try the simulation</h2>
+
+        <p>
+          The interactive Streamlit app lets you run your own experiments: set &alpha;, configure
+          competitive dynamics, and observe how the DQN agent&rsquo;s strategy distribution evolves
+          in real time.
+        </p>
+
+        <div class="callout callout--key" style="text-align: center;">
+          <p class="callout__label">Interactive demo</p>
+          <p style="margin-bottom: 1.25rem;">Explore the simulation in your browser &mdash; no installation required.</p>
+          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+            <a href="https://agent-marketplace-rl.streamlit.app/" class="btn btn--primary" target="_blank" rel="noopener">
+              Launch simulation &rarr;
+            </a>
+            <a href="https://github.com/huwhallam/agent-marketplace-rl" class="btn btn--outline" target="_blank" rel="noopener">
+              View source on GitHub
+            </a>
+          </div>
+        </div>
+
+        <p style="margin-top: 2rem;">
+          For the full governance argument, failure mode analysis, and policy recommendations, see
+          the SPAR research paper:
+        </p>
+
+        <div style="margin-top: 1rem;">
+          <a href="infrastructure-of-perception.html" class="btn btn--outline">
+            Read &ldquo;The Infrastructure of Perception&rdquo; &rarr;
+          </a>
+        </div>
+
+      </article>
+
+      <!-- ===== TOC SIDEBAR ===== -->
+      <aside class="toc">
+        <p class="toc__title">Contents</p>
+        <ol class="toc__list">
+          <li><a href="#research-context" class="toc__link">Research context</a></li>
+          <li><a href="#environment" class="toc__link">Environment design</a>
+            <ol>
+              <li><a href="#state-space" class="toc__link">State space</a></li>
+              <li><a href="#action-space" class="toc__link">Action space</a></li>
+              <li><a href="#reward" class="toc__link">Reward function</a></li>
+            </ol>
+          </li>
+          <li><a href="#rl-technique" class="toc__link">RL technique</a>
+            <ol>
+              <li><a href="#why-rl" class="toc__link">Why RL?</a></li>
+              <li><a href="#mdp" class="toc__link">MDP formalism</a></li>
+              <li><a href="#q-learning" class="toc__link">Q-learning</a></li>
+              <li><a href="#dqn" class="toc__link">Deep Q-Network</a></li>
+              <li><a href="#exploration" class="toc__link">Exploration &amp; training</a></li>
+            </ol>
+          </li>
+          <li><a href="#experiments" class="toc__link">Experiments</a>
+            <ol>
+              <li><a href="#experiment-1" class="toc__link">Infrastructure sweep</a></li>
+              <li><a href="#experiment-2" class="toc__link">Competitive dynamics</a></li>
+              <li><a href="#experiment-3" class="toc__link">Governance efficiency</a></li>
+            </ol>
+          </li>
+          <li><a href="#generalisability" class="toc__link">Generalisability</a></li>
+          <li><a href="#try-it" class="toc__link">Try the simulation</a></li>
+        </ol>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="site-footer__name">Huw Hallam</span>
+      <ul class="site-footer__links">
+        <li><a href="https://github.com/huwhallam" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="mailto:huw.hallam@protonmail.com">Email</a></li>
+      </ul>
+      <p class="site-footer__copy">Built with HTML &amp; CSS &middot; Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+
+  <!-- ===== TOC ACTIVE STATE ===== -->
+  <script>
+    const tocLinks = document.querySelectorAll('.toc__link');
+    const sections = document.querySelectorAll('[id]');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('toc__link--active'));
+          const active = document.querySelector(`.toc__link[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('toc__link--active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
